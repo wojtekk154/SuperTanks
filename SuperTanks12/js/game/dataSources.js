@@ -5,7 +5,7 @@ export default function getData() {
               position: {
                   direction: 3,
                   x: 400,
-                  y: 0
+                  y: 100
               },
               image: 'assets/monster.png'
           },
@@ -13,7 +13,7 @@ export default function getData() {
               position: {
                   direction: 2,
                   x: 500,
-                  y: 0
+                  y: 150
               },
               image: 'assets/monster.png'
           },
@@ -21,7 +21,7 @@ export default function getData() {
               position: {
                   direction: 2,
                   x: 400,
-                  y: 0,
+                  y: 200,
               },
               image: 'assets/monster.png'
           },
@@ -29,7 +29,7 @@ export default function getData() {
               position: {
                   direction: 1,
                   x: 750,
-                  y: 0
+                  y: 100
               },
               image: 'assets/monster.png'
           },
@@ -160,3 +160,10 @@ export default function getData() {
   };
   return data;
 }
+
+export const MovementDirection = {
+    UP: 1,
+    DOWN: 2,
+    LEFT: 3,
+    RIGHT: 4
+};

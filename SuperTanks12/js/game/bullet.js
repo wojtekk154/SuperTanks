@@ -53,15 +53,20 @@ export default class Bullet {
 
     collisionsCheck(object, size) {
         return !(this.position.x + 5 < object.x || object.x + size < this.position.x ||
-            this.position.y + 5 < object.y || object.y + size < this.position.y);
+        this.position.y + 5 < object.y || object.y + size < this.position.y);
     }
 
     draw() {
         this.context.save();
-        this.context.fillStyle = 'rgb(225, 140, 139)';
+        this.context.fillStyle = 'rgb(225, 240, 239)';
         this.context.fillRect(this.position.x, this.position.y, 3, 3);
         this.context.restore();
     }
 
+    colisionsScreen() {
+        if ((this.position.x >= 800) || (this.position.x <= 0) || (this.position.y >= 600) || (this.position.y < 0)) {
+            return true;
+        }
+    }
 
 }

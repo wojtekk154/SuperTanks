@@ -58,11 +58,15 @@ export default class Hero extends Character {
         }
     }
 
-    collisionsCheck(object, size) {
-        return !(this.position.x + 32 < object.x || object.x + size < this.position.x ||
-            this.position.y + 32 < object.y || object.y + size < this.position.y);
+    colisionsScreen() {
+        if (this.position.x >= (800 - 32)) this.position.x = 800 - 32;
+        if (this.position.x <= 0) this.position.x = 0;
+        if (this.position.y >= (600 - 32)) this.position.y = 600 - 32;
+        if (this.position.y < 0) this.position.y = 0;
     }
 
-
-
+    collisionsCheck(object, size) {
+        return !(this.position.x + 32 < object.x || object.x + size < this.position.x ||
+        this.position.y + 32 < object.y || object.y + size < this.position.y);
+    }
 }

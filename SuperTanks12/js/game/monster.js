@@ -3,6 +3,8 @@
  */
 
 import Character from "./character";
+import {MovementDirection} from "./dataSources";
+let _ = require('lodash');
 
 export default class Enemy extends Character {
     constructor(index, canvas, position, image) {
@@ -11,26 +13,48 @@ export default class Enemy extends Character {
         this.index = index;
         this.framesDirections = 0;
         this.sprite = {1: 0, 2: 64, 3: 96, 4: 32};
-        this.active = true;
+        this._active = true;
+        this._movementAllow = true;
+    }
+
+    set active(value) {
+        this._active = value;
+    }
+
+    get active() {
+        return this._active;
+    }
+
+    get movementAllow() {
+        return this._movementAllow;
+    }
+
+    setMovementAllow(value) {
+        this._movementAllow = value;
     }
 
     movement(modyfier) {
-        if (this.position.direction === 1) {
-            this.position.y -= this.speed * modyfier;
-        }
-        if (this.position.direction === 2) {
-            this.position.y += this.speed * modyfier;
-        }
-        if (this.position.direction === 3) {
-            this.position.x -= this.speed * modyfier;
-        }
-        if (this.position.direction === 4) {
-            this.position.x += this.speed * modyfier;
-        }
-        if (this.colisionsScreen() || this.framesDirections > 60) {
-            this.resetDirection();
+        switch (this.position.direction) {
+            case MovementDirection.UP:
+                this.position.y -= this.speed * modyfier;
+                break;
+            case MovementDirection.DOWN:
+                this.position.y += this.speed * modyfier;
+                break;
+            case MovementDirection.LEFT:
+                this.position.x -= this.speed * modyfier;
+                break;
+            case MovementDirection.RIGHT:
+                this.position.x += this.speed * modyfier;
+                break;
         }
         this.framesDirections++;
+    }
+
+    invokeDirection() {
+        if (this.framesDirections > 60) {
+            this.resetDirection();
+        }
     }
 
     resetDirection() {
@@ -40,23 +64,27 @@ export default class Enemy extends Character {
 
     assignDirection() {
         let temp = {
-            1: {1: 2, 2: 3, 3: 4},
-            2: {1: 1, 2: 3, 3: 4},
-            3: {1: 1, 2: 2, 3: 4},
-            4: {1: 1, 2: 2, 3: 3}
+            1: {1: 'DOWN', 2: 'RIGHT', 3: 'LEFT'},
+            2: {1: 'UP', 2: 'LEFT', 3: 'RIGHT'},
+            3: {1: 'RIGHT', 2: 'UP', 3: 'DOWN'},
+            4: {1: 'LEFT', 2: 'DOWN', 3: 'UP'}
         };
         switch (this.position.direction) {
-            case 1:
-                this.position.direction = temp[1][Math.floor((Math.random() * 3) + 1)];
+            case MovementDirection.UP:
+                this.position.y += 5;
+                this.position.direction = MovementDirection[temp[1][Math.floor((Math.random() * 3) + 1)]];
                 break;
-            case 2:
-                this.position.direction = temp[2][Math.floor((Math.random() * 3) + 1)];
+            case  MovementDirection.DOWN:
+                this.position.y -= 5;
+                this.position.direction = MovementDirection[temp[2][Math.floor((Math.random() * 3) + 1)]];
                 break;
-            case 3:
-                this.position.direction = temp[3][Math.floor((Math.random() * 3) + 1)];
+            case  MovementDirection.LEFT:
+                this.position.x += 5;
+                this.position.direction = MovementDirection[temp[3][Math.floor((Math.random() * 3) + 1)]];
                 break;
-            case 4:
-                this.position.direction = temp[4][Math.floor((Math.random() * 3) + 1)];
+            case  MovementDirection.RIGHT:
+                this.position.y -= 5;
+                this.position.direction = MovementDirection[temp[4][Math.floor((Math.random() * 3) + 1)]];
                 break;
         }
     }
@@ -64,16 +92,16 @@ export default class Enemy extends Character {
     collisionsCheck(object, size) {
         if (this.collisionElement(object, size)) {
             switch (this.position.direction) {
-                case 1:
+                case MovementDirection.UP:
                     this.position.y = object.y + size + 2;
                     break;
-                case 2:
+                case MovementDirection.DOWN:
                     this.position.y = object.y - 34;
                     break;
-                case 3:
+                case MovementDirection.LEFT:
                     this.position.x = object.x + size + 2;
                     break;
-                case 4:
+                case MovementDirection.RIGHT:
                     this.position.x = object.x - 34;
                     break;
             }
@@ -82,4 +110,30 @@ export default class Enemy extends Character {
         return false;
     }
 
+    colisionsScreen() {
+        return (this.position.x >= (800 - 32) || this.position.x <= 0 || this.position.y >= (600 - 32) || this.position.y < 0);
+    }
+
+    screenDirection() {
+        if (this.colisionsScreen()) {
+            switch (this.position.direction) {
+                case MovementDirection.UP:
+                    this.position.y += 5;
+                    this.position.direction = MovementDirection.DOWN;
+                    break;
+                case MovementDirection.DOWN:
+                    this.position.y -= 5;
+                    this.position.direction = MovementDirection.UP;
+                    break;
+                case MovementDirection.LEFT:
+                    this.position.x += 5;
+                    this.position.direction = MovementDirection.RIGHT;
+                    break;
+                case MovementDirection.RIGHT:
+                    this.position.x -= 5;
+                    this.position.direction = MovementDirection.LEFT;
+                    break;
+            }
+        }
+    }
 }

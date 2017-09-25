@@ -5,7 +5,7 @@
 export default class Character {
     constructor(canvas, position, image) {
         this.position = position;
-        this.speed = 256;
+        this.speed = 200;
         this.image = new Image();
         this.image.src = image;
         this.context = canvas.getContext('2d');
@@ -13,9 +13,6 @@ export default class Character {
     }
 
     init() {
-        this.image.onload = () => {
-
-        };
     }
 
     draw() {
@@ -28,11 +25,6 @@ export default class Character {
         return !(this.position.x + 32 < object.x || object.x + size < this.position.x || this.position.y + 32 < object.y || object.y + size < this.position.y);
     }
 
-    colisionsScreen(){
-        if (this.position.x >= (800 - 32)) this.position.x = 800 - 32;
-        if (this.position.x <= 0) this.position.x = 0;
-        if (this.position.y >= (600 - 32)) this.position.y = 600 - 32;
-        if (this.position.y < 0) this.position.y = 0;
-    }
+
 
 }
