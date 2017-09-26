@@ -68,7 +68,7 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (immutable) */ __webpack_exports__["b"] = getData;
+/* harmony export (immutable) */ __webpack_exports__["c"] = getData;
 function getData() {
     let data = {
         enemies: [{
@@ -116,7 +116,7 @@ function getData() {
         }, {
             position: {
                 direction: 4,
-                x: 450,
+                x: 20,
                 y: 200
             },
             image: 'assets/monster.png'
@@ -159,7 +159,7 @@ function getData() {
             x: 250,
             y: 200
         }, {
-            x: 450,
+            x: 20,
             y: 200
         }, {
             x: 350,
@@ -168,7 +168,7 @@ function getData() {
             x: 550,
             y: 200
         }, {
-            x: 650,
+            x: 10,
             y: 400
         }, {
             x: 750,
@@ -180,19 +180,19 @@ function getData() {
             x: 250,
             y: 500
         }, {
-            x: 650,
-            y: 650
+            x: 10,
+            y: 10
         }, {
             x: 750,
             y: 550
         }, {
-            x: 650,
+            x: 10,
             y: 500
         }],
         hero: {
             position: {
                 direction: 1,
-                x: 500,
+                x: 400,
                 y: 400
             },
             image: 'assets/hero.png'
@@ -207,7 +207,22 @@ const MovementDirection = {
     LEFT: 3,
     RIGHT: 4
 };
-/* harmony export (immutable) */ __webpack_exports__["a"] = MovementDirection;
+/* harmony export (immutable) */ __webpack_exports__["b"] = MovementDirection;
+
+
+const Map1data = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0], [0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 2, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]];
+/* unused harmony export Map1data */
+
+
+const Map4data = [[0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0], [0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0], [0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1]];
+/* unused harmony export Map4data */
+
+
+const Map2data = [[0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2, 2, 2, 2, 2, 2], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0], [0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0], [0, 0, 0, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0], [0, 0, 0, 2, 1, 1, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0], [0, 0, 0, 0, 2, 2, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0], [0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0], [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [2, 2, 2, 2, 2, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [2, 2, 2, 2, 2, 2, 2, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0], [1, 1, 1, 1, 1, 2, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 2, 2, 1, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 1, 1], [0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2], [0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 2], [2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2]];
+/* harmony export (immutable) */ __webpack_exports__["a"] = Map2data;
+
+const Map3data = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 1, 2, 0, 1, 2, 0, 1, 2, 3, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 3, 3, 0, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 3, 3, 2, 3, 3, 3, 3, 3, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 1, 2, 2, 2, 0, 0, 2, 2, 2, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 3, 3, 2, 0, 0, 0, 0, 2, 2, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 1, 2, 2, 0, 0, 0, 0, 0, 2, 1, 2, 0, 0, 0, 0, 0, 2, 3, 3, 3, 3, 3, 3, 3, 2, 0, 0, 0, 0], [0, 3, 3, 2, 0, 0, 0, 0, 2, 2, 3, 3, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 2, 2, 2, 0, 3, 0, 0], [0, 0, 0, 3, 0, 0, 0, 0, 0, 3, 3, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 2, 2, 1, 2, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 2, 0, 0, 0, 0, 2, 3, 3, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 1, 0, 0, 0, 2, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 2, 0, 0, 2, 3, 3, 3, 0, 3, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 2, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 3, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2, 0, 0, 0, 0, 0, 0, 0, 0]];
+/* unused harmony export Map3data */
 
 
 /***/ }),
@@ -222,25 +237,33 @@ const MovementDirection = {
 class Character {
     constructor(canvas, position, image) {
         this.position = position;
-        this.speed = 200;
+        this.size = 30;
+        this.speed = 6 * this.size;
         this.image = new Image();
         this.image.src = image;
         this.context = canvas.getContext('2d');
-        this.sprite = { 1: 0, 2: 64, 3: 96, 4: 32 };
+        this.sprite = { 1: 0, 2: 2 * this.size, 3: 3 * this.size, 4: this.size };
     }
 
     init() {}
 
     draw() {
         this.context.save();
-        this.context.drawImage(this.image, this.sprite[this.position.direction], 0, 32, 32, this.position.x, this.position.y, 32, 32);
+        this.context.drawImage(this.image, this.sprite[this.position.direction], 0, this.size, this.size, this.position.x, this.position.y, this.size, this.size);
         this.context.restore();
     }
 
     collisionElement(object, size) {
-        return !(this.position.x + 32 < object.x || object.x + size < this.position.x || this.position.y + 32 < object.y || object.y + size < this.position.y);
+        return !(this.position.x + this.size < object.x || object.x + size < this.position.x || this.position.y + this.size < object.y || object.y + size < this.position.y);
     }
 
+    colisionScreen(w, h) {
+        if (this.position.x > w - this.size || this.position.x < 0 || this.position.y > h - this.size || this.position.y < 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
 /* harmony export (immutable) */ __webpack_exports__["a"] = Character;
 
@@ -266,8 +289,8 @@ scene.main();
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dataSources__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__hero__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__monster__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__blocks__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__bullet__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__bullet__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__blocks__ = __webpack_require__(10);
 /**
  * Created by wokustrzyk on 13.09.2017.
  */
@@ -278,10 +301,11 @@ scene.main();
 
 
 
+
 class Scene {
     constructor() {
-        this._width = 800;
-        this._height = 600;
+        this._width = 900;
+        this._height = 900;
         this._canvas = document.createElement('canvas');
         this.context = this._canvas.getContext('2d');
         this._background = new Image();
@@ -292,13 +316,24 @@ class Scene {
         this.heroReloading = false;
         this.enemiesBullets = [];
         this._background.src = 'assets/background.png';
-        this.hero = new __WEBPACK_IMPORTED_MODULE_1__hero__["a" /* default */](this._canvas, Object(__WEBPACK_IMPORTED_MODULE_0__dataSources__["b" /* default */])().hero.position, Object(__WEBPACK_IMPORTED_MODULE_0__dataSources__["b" /* default */])().hero.image);
-        Object(__WEBPACK_IMPORTED_MODULE_0__dataSources__["b" /* default */])().blocks.map(block => {
-            this.blocks.push(new __WEBPACK_IMPORTED_MODULE_3__blocks__["a" /* default */](block, this._canvas));
-        });
-        Object(__WEBPACK_IMPORTED_MODULE_0__dataSources__["b" /* default */])().enemies.map((enemy, index) => {
-            this.enemies.push(new __WEBPACK_IMPORTED_MODULE_2__monster__["a" /* default */](index, this._canvas, enemy.position, enemy.image));
-        });
+        this.movementAllow = {
+            1: true,
+            2: true,
+            3: true,
+            4: true
+        };
+        this.hero = new __WEBPACK_IMPORTED_MODULE_1__hero__["a" /* default */](this._canvas, Object(__WEBPACK_IMPORTED_MODULE_0__dataSources__["c" /* default */])().hero.position, Object(__WEBPACK_IMPORTED_MODULE_0__dataSources__["c" /* default */])().hero.image);
+        for (let i = 0; i < __WEBPACK_IMPORTED_MODULE_0__dataSources__["a" /* Map2data */].length; i++) {
+            for (let j = 0; j < __WEBPACK_IMPORTED_MODULE_0__dataSources__["a" /* Map2data */][i].length; j++) {
+                if (__WEBPACK_IMPORTED_MODULE_0__dataSources__["a" /* Map2data */][i][j] !== 0) {
+                    this.blocks.push(new __WEBPACK_IMPORTED_MODULE_4__blocks__["a" /* default */](j, i, __WEBPACK_IMPORTED_MODULE_0__dataSources__["a" /* Map2data */][i][j], this._canvas));
+                }
+            }
+        }
+
+        // getData().enemies.map((enemy, index) => {
+        //     this.enemies.push(new Enemy(index, this._canvas, enemy.position, enemy.image));
+        // });
         this.keysDown = {};
     }
 
@@ -333,64 +368,61 @@ class Scene {
     }
 
     update(modyfier) {
-        let collisions = [];
         this.shootToEnemy();
-        this.enemies.map((enemy, index) => {
-
-            collisions[this.blocks.length + enemy.index] = this.hero.collisionsCheck(enemy.position, 32);
-
-            /* Enemy block collisions */
-            this.blocks.map(block => {
-                if (enemy.collisionsCheck(block.position, 50)) {
-                    enemy.setMovementAllow(false);
-                }
-            });
-
-            /* enemies collissions */
-            this.enemies.forEach((en, key) => {
-                if (en.index !== enemy.index && enemy.collisionsCheck(en.position, 32)) {
-                    en.setMovementAllow(false);
-                    enemy.setMovementAllow(false);
-                }
-            });
-
-            if (enemy.collisionsCheck(this.hero.position, 32)) {
-                enemy.setMovementAllow(false);
-            }
-
-            if (this.heroBullet) {
-                if (this.heroBullet.collisionsCheck(enemy.position, 32)) {
-                    this.enemies[index]._active = false;
-                    this.heroBullet = null;
-                }
-            }
-
-            if (enemy.movementAllow) {
-                enemy.movement(modyfier);
-            } else {
-                enemy.resetDirection();
-                enemy.setMovementAllow(true);
-            }
-
-            enemy.colisionsScreen();
-        });
+        // this.enemies.map((enemy, index) => {
+        //
+        //
+        //     // collisions[this.blocks.length + enemy.index] = this.hero.collisionsCheck(enemy.position, 32);
+        //
+        //     /* Enemy block collisions */
+        //     // this.blocks.map(block => {
+        //     //     if (enemy.collisionsCheck(block.position, 50)) {
+        //     //         enemy.setMovementAllow(false);
+        //     //     }
+        //     // });
+        //     //
+        //     /* enemies collissions */
+        //     // this.enemies.forEach((en, key) => {
+        //     //     if ((en.index !== enemy.index) && enemy.collisionsCheck(en.position, 32)) {
+        //     //         en.setMovementAllow(false);
+        //     //         enemy.setMovementAllow(false);
+        //     //     }
+        //     // });
+        //
+        //     // if (enemy.collisionsCheck(this.hero.position, 32)) {
+        //     //     enemy.setMovementAllow(false);
+        //     // }
+        //
+        //     // if (this.heroBullet) {
+        //     //     if (this.heroBullet.collisionsCheck(enemy.position, 32)) {
+        //     //         this.enemies[index]._active = false;
+        //     //         this.heroBullet = null;
+        //     //     }
+        //     // }
+        //
+        //     // if (enemy.movementAllow) {
+        //     enemy.movement(modyfier);
+        //     // } else {
+        //     //     enemy.resetDirection();
+        //     //     enemy.setMovementAllow(true);
+        //     // }
+        //     //
+        //     // enemy.colisionsScreen();
+        //
+        // });
 
         this.blocks.map((block, index) => {
-            collisions[index] = this.hero.collisionsCheck(block.position, 50);
+            this.hero.collisionsCheck(block.position, block.size);
+
             if (this.heroBullet) {
                 if (this.heroBullet.collisionsCheck(block.position, block.size) || this.heroBullet.colisionsScreen()) {
                     this.heroBullet = null;
+                    this.heroReloading = false;
                 }
             }
         });
-
         if (this.heroBullet) this.heroBullet.movement(modyfier);
-
-        if (this.heroBullet === null) this.heroReloading = false;
-
-        this.hero.movement(this.keysDown, collisions, modyfier);
-
-        this.removeEnemies();
+        this.hero.movement(this.keysDown, modyfier);
     }
 
     removeEnemies() {
@@ -411,7 +443,7 @@ class Scene {
 
     shootToEnemy() {
         if (32 in this.keysDown && !this.heroReloading) {
-            this.heroBullet = new __WEBPACK_IMPORTED_MODULE_4__bullet__["a" /* default */](this.hero.position, this.hero.position.direction, this._canvas);
+            this.heroBullet = new __WEBPACK_IMPORTED_MODULE_3__bullet__["a" /* default */](this.hero.position, this.hero.position.direction, this._canvas);
             this.heroReloading = true;
         }
     }
@@ -434,6 +466,8 @@ class Scene {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__character__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__dataSources__ = __webpack_require__(0);
+
 
 
 class Hero extends __WEBPACK_IMPORTED_MODULE_0__character__["a" /* default */] {
@@ -441,12 +475,10 @@ class Hero extends __WEBPACK_IMPORTED_MODULE_0__character__["a" /* default */] {
         super(canvas, image);
         this.position = position;
         this.image.src = image;
-        this.sprite = { 1: 0, 2: 64, 3: 96, 4: 32 };
         this.controls = { 87: true, 83: true, 65: true, 68: true };
     }
 
-    movement(keysDown, collision, modyfier) {
-        this.controls = this.allowControl(keysDown, collision, this.controls);
+    movement(keysDown, modyfier) {
         if (87 in keysDown && this.controls[87]) {
             this.position.y -= this.speed * modyfier;
             this.position.direction = 1;
@@ -463,46 +495,27 @@ class Hero extends __WEBPACK_IMPORTED_MODULE_0__character__["a" /* default */] {
             this.position.x += this.speed * modyfier;
             this.position.direction = 4;
         }
-
-        this.colisionsScreen();
-    }
-
-    allowControl(keysDown, collision, oldAllow) {
-        let allow = {
-            87: true,
-            83: true,
-            65: true,
-            68: true
-        };
-
-        if ((!oldAllow[87] || !oldAllow[83] || !oldAllow[65] || !oldAllow[68]) && collision.indexOf(true, 0) >= 0) {
-            return oldAllow;
-        } else {
-            if (87 in keysDown && collision.indexOf(true, 0) >= 0) {
-                allow[87] = false;
-            }
-            if (83 in keysDown && collision.indexOf(true, 0) >= 0) {
-                allow[83] = false;
-            }
-            if (65 in keysDown && collision.indexOf(true, 0) >= 0) {
-                allow[65] = false;
-            }
-            if (68 in keysDown && collision.indexOf(true, 0) >= 0) {
-                allow[68] = false;
-            }
-            return allow;
-        }
-    }
-
-    colisionsScreen() {
-        if (this.position.x >= 800 - 32) this.position.x = 800 - 32;
-        if (this.position.x <= 0) this.position.x = 0;
-        if (this.position.y >= 600 - 32) this.position.y = 600 - 32;
-        if (this.position.y < 0) this.position.y = 0;
     }
 
     collisionsCheck(object, size) {
-        return !(this.position.x + 32 < object.x || object.x + size < this.position.x || this.position.y + 32 < object.y || object.y + size < this.position.y);
+        if (this.collisionElement(object, size) || this.colisionScreen(900, 900)) {
+            switch (this.position.direction) {
+                case __WEBPACK_IMPORTED_MODULE_1__dataSources__["b" /* MovementDirection */].UP:
+                    this.controls[87] = false;
+                    break;
+                case __WEBPACK_IMPORTED_MODULE_1__dataSources__["b" /* MovementDirection */].DOWN:
+                    this.controls[83] = false;
+                    break;
+                case __WEBPACK_IMPORTED_MODULE_1__dataSources__["b" /* MovementDirection */].LEFT:
+                    this.controls[65] = false;
+                    break;
+                case __WEBPACK_IMPORTED_MODULE_1__dataSources__["b" /* MovementDirection */].RIGHT:
+                    this.controls[68] = false;
+                    break;
+            }
+        } else {
+            this.controls = { 87: true, 83: true, 65: true, 68: true };
+        }
     }
 }
 /* harmony export (immutable) */ __webpack_exports__["a"] = Hero;
@@ -529,7 +542,6 @@ class Enemy extends __WEBPACK_IMPORTED_MODULE_0__character__["a" /* default */] 
         this.position = position;
         this.index = index;
         this.framesDirections = 0;
-        this.sprite = { 1: 0, 2: 64, 3: 96, 4: 32 };
         this._active = true;
         this._movementAllow = true;
     }
@@ -552,109 +564,105 @@ class Enemy extends __WEBPACK_IMPORTED_MODULE_0__character__["a" /* default */] 
 
     movement(modyfier) {
         switch (this.position.direction) {
-            case __WEBPACK_IMPORTED_MODULE_1__dataSources__["a" /* MovementDirection */].UP:
+            case __WEBPACK_IMPORTED_MODULE_1__dataSources__["b" /* MovementDirection */].UP:
                 this.position.y -= this.speed * modyfier;
                 break;
-            case __WEBPACK_IMPORTED_MODULE_1__dataSources__["a" /* MovementDirection */].DOWN:
+            case __WEBPACK_IMPORTED_MODULE_1__dataSources__["b" /* MovementDirection */].DOWN:
                 this.position.y += this.speed * modyfier;
                 break;
-            case __WEBPACK_IMPORTED_MODULE_1__dataSources__["a" /* MovementDirection */].LEFT:
+            case __WEBPACK_IMPORTED_MODULE_1__dataSources__["b" /* MovementDirection */].LEFT:
                 this.position.x -= this.speed * modyfier;
                 break;
-            case __WEBPACK_IMPORTED_MODULE_1__dataSources__["a" /* MovementDirection */].RIGHT:
+            case __WEBPACK_IMPORTED_MODULE_1__dataSources__["b" /* MovementDirection */].RIGHT:
                 this.position.x += this.speed * modyfier;
                 break;
         }
         this.framesDirections++;
     }
 
-    invokeDirection() {
-        if (this.framesDirections > 60) {
-            this.resetDirection();
-        }
-    }
-
-    resetDirection() {
-        this.assignDirection();
-        this.framesDirections = 0;
-    }
-
-    assignDirection() {
-        let temp = {
-            1: { 1: 'DOWN', 2: 'RIGHT', 3: 'LEFT' },
-            2: { 1: 'UP', 2: 'LEFT', 3: 'RIGHT' },
-            3: { 1: 'RIGHT', 2: 'UP', 3: 'DOWN' },
-            4: { 1: 'LEFT', 2: 'DOWN', 3: 'UP' }
-        };
-        switch (this.position.direction) {
-            case __WEBPACK_IMPORTED_MODULE_1__dataSources__["a" /* MovementDirection */].UP:
-                this.position.y += 5;
-                this.position.direction = __WEBPACK_IMPORTED_MODULE_1__dataSources__["a" /* MovementDirection */][temp[1][Math.floor(Math.random() * 3 + 1)]];
-                break;
-            case __WEBPACK_IMPORTED_MODULE_1__dataSources__["a" /* MovementDirection */].DOWN:
-                this.position.y -= 5;
-                this.position.direction = __WEBPACK_IMPORTED_MODULE_1__dataSources__["a" /* MovementDirection */][temp[2][Math.floor(Math.random() * 3 + 1)]];
-                break;
-            case __WEBPACK_IMPORTED_MODULE_1__dataSources__["a" /* MovementDirection */].LEFT:
-                this.position.x += 5;
-                this.position.direction = __WEBPACK_IMPORTED_MODULE_1__dataSources__["a" /* MovementDirection */][temp[3][Math.floor(Math.random() * 3 + 1)]];
-                break;
-            case __WEBPACK_IMPORTED_MODULE_1__dataSources__["a" /* MovementDirection */].RIGHT:
-                this.position.y -= 5;
-                this.position.direction = __WEBPACK_IMPORTED_MODULE_1__dataSources__["a" /* MovementDirection */][temp[4][Math.floor(Math.random() * 3 + 1)]];
-                break;
-        }
-    }
-
-    collisionsCheck(object, size) {
-        if (this.collisionElement(object, size)) {
-            switch (this.position.direction) {
-                case __WEBPACK_IMPORTED_MODULE_1__dataSources__["a" /* MovementDirection */].UP:
-                    this.position.y = object.y + size + 2;
-                    break;
-                case __WEBPACK_IMPORTED_MODULE_1__dataSources__["a" /* MovementDirection */].DOWN:
-                    this.position.y = object.y - 34;
-                    break;
-                case __WEBPACK_IMPORTED_MODULE_1__dataSources__["a" /* MovementDirection */].LEFT:
-                    this.position.x = object.x + size + 2;
-                    break;
-                case __WEBPACK_IMPORTED_MODULE_1__dataSources__["a" /* MovementDirection */].RIGHT:
-                    this.position.x = object.x - 34;
-                    break;
-            }
-            return true;
-        }
-        return false;
-    }
-
-    colisionsScreen() {
-        return this.position.x >= 800 - 32 || this.position.x <= 0 || this.position.y >= 600 - 32 || this.position.y < 0;
-    }
-
-    screenDirection() {
-        if (this.colisionsScreen()) {
-            switch (this.position.direction) {
-                case __WEBPACK_IMPORTED_MODULE_1__dataSources__["a" /* MovementDirection */].UP:
-                    this.position.y += 5;
-                    this.position.direction = __WEBPACK_IMPORTED_MODULE_1__dataSources__["a" /* MovementDirection */].DOWN;
-                    break;
-                case __WEBPACK_IMPORTED_MODULE_1__dataSources__["a" /* MovementDirection */].DOWN:
-                    this.position.y -= 5;
-                    this.position.direction = __WEBPACK_IMPORTED_MODULE_1__dataSources__["a" /* MovementDirection */].UP;
-                    break;
-                case __WEBPACK_IMPORTED_MODULE_1__dataSources__["a" /* MovementDirection */].LEFT:
-                    this.position.x += 5;
-                    this.position.direction = __WEBPACK_IMPORTED_MODULE_1__dataSources__["a" /* MovementDirection */].RIGHT;
-                    break;
-                case __WEBPACK_IMPORTED_MODULE_1__dataSources__["a" /* MovementDirection */].RIGHT:
-                    this.position.x -= 5;
-                    this.position.direction = __WEBPACK_IMPORTED_MODULE_1__dataSources__["a" /* MovementDirection */].LEFT;
-                    break;
-            }
-        }
-    }
+    // invokeDirection() {
+    //     if (this.framesDirections > 60) {
+    //         this.resetDirection();
+    //     }
+    // }
+    //
+    // resetDirection() {
+    //     this.assignDirection();
+    //     this.framesDirections = 0;
+    // }
+    //
+    // assignDirection() {
+    //     let temp = {
+    //         1: {1: 'DOWN', 2: 'RIGHT', 3: 'LEFT'},
+    //         2: {1: 'UP', 2: 'LEFT', 3: 'RIGHT'},
+    //         3: {1: 'RIGHT', 2: 'UP', 3: 'DOWN'},
+    //         4: {1: 'LEFT', 2: 'DOWN', 3: 'UP'}
+    //     };
+    //     switch (this.position.direction) {
+    //         case MovementDirection.UP:
+    //             this.position.direction = MovementDirection[temp[1][Math.floor((Math.random() * 3) + 1)]];
+    //             break;
+    //         case  MovementDirection.DOWN:
+    //             this.position.direction = MovementDirection[temp[2][Math.floor((Math.random() * 3) + 1)]];
+    //             break;
+    //         case  MovementDirection.LEFT:
+    //             this.position.direction = MovementDirection[temp[3][Math.floor((Math.random() * 3) + 1)]];
+    //             break;
+    //         case  MovementDirection.RIGHT:
+    //             this.position.direction = MovementDirection[temp[4][Math.floor((Math.random() * 3) + 1)]];
+    //             break;
+    //     }
+    // }
+    //
+    // collisionsCheck(object, size) {
+    //     if (this.collisionElement(object, size)) {
+    //         switch (this.position.direction) {
+    //             case MovementDirection.UP:
+    //                 this.position.y = object.y + size;
+    //                 break;
+    //             case MovementDirection.DOWN:
+    //                 this.position.y = object.y - 50;
+    //                 break;
+    //             case MovementDirection.LEFT:
+    //                 this.position.x = object.x + size;
+    //                 break;
+    //             case MovementDirection.RIGHT:
+    //                 this.position.x = object.x - 50;
+    //                 break;
+    //         }
+    //         return true;
+    //     }
+    //     return false;
+    // }
+    //
+    // colisionsScreen() {
+    //     return (this.position.x >= (1000 - 50) || this.position.x <= 0 || this.position.y >= (1000- 50) || this.position.y < 0);
+    // }
+    //
+    // screenDirection() {
+    //     if (this.colisionsScreen()) {
+    //         switch (this.position.direction) {
+    //             case MovementDirection.UP:
+    //                 this.position.y += 5;
+    //                 this.position.direction = MovementDirection.DOWN;
+    //                 break;
+    //             case MovementDirection.DOWN:
+    //                 this.position.y -= 5;
+    //                 this.position.direction = MovementDirection.UP;
+    //                 break;
+    //             case MovementDirection.LEFT:
+    //                 this.position.x += 5;
+    //                 this.position.direction = MovementDirection.RIGHT;
+    //                 break;
+    //             case MovementDirection.RIGHT:
+    //                 this.position.x -= 5;
+    //                 this.position.direction = MovementDirection.LEFT;
+    //                 break;
+    //         }
+    //     }
+    // }
 }
-/* harmony export (immutable) */ __webpack_exports__["a"] = Enemy;
+/* unused harmony export default */
 
 
 /***/ }),
@@ -17813,33 +17821,6 @@ module.exports = function(module) {
  * Created by wokustrzyk on 14.09.2017.
  */
 
-class Block {
-    constructor(position, canvas) {
-        this.position = position;
-        this.context = canvas.getContext('2d');
-        this.color = 'rgb(120, 240, 200)';
-        this.size = 50;
-    }
-
-    draw() {
-        this.context.save();
-        this.context.fillStyle = this.color;
-        this.context.fillRect(this.position.x, this.position.y, this.size, this.size);
-        this.context.restore();
-    }
-}
-/* harmony export (immutable) */ __webpack_exports__["a"] = Block;
-
-
-/***/ }),
-/* 10 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/**
- * Created by wokustrzyk on 14.09.2017.
- */
-
 class Bullet {
     constructor(startPosition, direction, canvas) {
         this.direction = direction;
@@ -17853,20 +17834,20 @@ class Bullet {
         let p = { x: 0, y: 0 };
         switch (this.direction) {
             case 1:
-                p.x = position.x + 32 / 2;
+                p.x = position.x + 30 / 2;
                 p.y = position.y;
                 break;
             case 2:
-                p.x = position.x + 32 / 2;
-                p.y = position.y + 32;
+                p.x = position.x + 30 / 2;
+                p.y = position.y + 30;
                 break;
             case 3:
                 p.x = position.x;
-                p.y = position.y + 32 / 2;
+                p.y = position.y + 30 / 2;
                 break;
             case 4:
-                p.x = position.x + 32;
-                p.y = position.y + 32 / 2;
+                p.x = position.x + 30;
+                p.y = position.y + 30 / 2;
                 break;
         }
         return p;
@@ -17908,6 +17889,38 @@ class Bullet {
 
 }
 /* harmony export (immutable) */ __webpack_exports__["a"] = Bullet;
+
+
+/***/ }),
+/* 10 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/**
+ * Created by wokustrzyk on 14.09.2017.
+ */
+
+class Block {
+    constructor(x, y, index, canvas) {
+        this.position = {
+            x: x * 30,
+            y: y * 30
+        };
+        this.context = canvas.getContext('2d');
+        this.index = index;
+        this.size = 30;
+        this.indexList = { 1: 'first1.png', 2: 'first.png', 3: 'third.png' };
+        this.image = new Image();
+        this.image.src = 'assets/' + this.indexList[index];
+    }
+
+    draw() {
+        this.context.save();
+        this.context.drawImage(this.image, this.position.x, this.position.y, this.size, this.size);
+        this.context.restore();
+    }
+}
+/* harmony export (immutable) */ __webpack_exports__["a"] = Block;
 
 
 /***/ })

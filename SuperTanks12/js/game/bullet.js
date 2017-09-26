@@ -15,20 +15,20 @@ export default class Bullet {
         let p = {x: 0, y: 0};
         switch (this.direction) {
             case 1:
-                p.x = position.x + 32 / 2;
+                p.x = position.x + 30 / 2;
                 p.y = position.y;
                 break;
             case 2:
-                p.x = position.x + 32 / 2;
-                p.y = position.y + 32;
+                p.x = position.x + 30 / 2;
+                p.y = position.y + 30;
                 break;
             case 3:
                 p.x = position.x;
-                p.y = position.y + 32 / 2;
+                p.y = position.y + 30 / 2;
                 break;
             case 4:
-                p.x = position.x + 32;
-                p.y = position.y + 32 / 2;
+                p.x = position.x + 30;
+                p.y = position.y + 30 / 2;
                 break;
         }
         return p;

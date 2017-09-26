@@ -2,16 +2,17 @@
  * Created by wokustrzyk on 13.09.2017.
  */
 
+import {Map2data} from './dataSources';
 import getData from './dataSources';
 import Hero from "./hero";
 import Enemy from "./monster";
-import Block from "./blocks";
 import Bullet from "./bullet";
+import Block from "./blocks";
 
 export default class Scene {
     constructor() {
-        this._width = 800;
-        this._height = 600;
+        this._width = 900;
+        this._height = 900;
         this._canvas = document.createElement('canvas');
         this.context = this._canvas.getContext('2d');
         this._background = new Image();
@@ -22,13 +23,24 @@ export default class Scene {
         this.heroReloading = false;
         this.enemiesBullets = [];
         this._background.src = 'assets/background.png';
+        this.movementAllow = {
+            1: true,
+            2: true,
+            3: true,
+            4: true
+        };
         this.hero = new Hero(this._canvas, getData().hero.position, getData().hero.image);
-        getData().blocks.map(block => {
-            this.blocks.push(new Block(block, this._canvas));
-        });
-        getData().enemies.map((enemy, index) => {
-            this.enemies.push(new Enemy(index, this._canvas, enemy.position, enemy.image));
-        });
+        for (let i = 0; i < Map2data.length; i++) {
+            for (let j = 0; j < Map2data[i].length; j++) {
+                if (Map2data[i][j] !== 0) {
+                    this.blocks.push(new Block(j, i, Map2data[i][j], this._canvas));
+                }
+            }
+        }
+
+        // getData().enemies.map((enemy, index) => {
+        //     this.enemies.push(new Enemy(index, this._canvas, enemy.position, enemy.image));
+        // });
         this.keysDown = {};
     }
 
@@ -63,66 +75,61 @@ export default class Scene {
     }
 
     update(modyfier) {
-        let collisions = [];
         this.shootToEnemy();
-        this.enemies.map((enemy, index) => {
-
-
-            collisions[this.blocks.length + enemy.index] = this.hero.collisionsCheck(enemy.position, 32);
-
-            /* Enemy block collisions */
-            this.blocks.map(block => {
-                if (enemy.collisionsCheck(block.position, 50)) {
-                    enemy.setMovementAllow(false);
-                }
-            });
-
-            /* enemies collissions */
-            this.enemies.forEach((en, key) => {
-                if ((en.index !== enemy.index) && enemy.collisionsCheck(en.position, 32)) {
-                    en.setMovementAllow(false);
-                    enemy.setMovementAllow(false);
-                }
-            });
-
-            if(enemy.collisionsCheck(this.hero.position, 32)){
-                enemy.setMovementAllow(false);
-            }
-
-            if (this.heroBullet) {
-                if (this.heroBullet.collisionsCheck(enemy.position, 32)) {
-                    this.enemies[index]._active = false;
-                    this.heroBullet = null;
-                }
-            }
-
-            if (enemy.movementAllow) {
-                enemy.movement(modyfier);
-            } else {
-                enemy.resetDirection();
-                enemy.setMovementAllow(true);
-            }
-
-            enemy.colisionsScreen();
-
-        });
+        // this.enemies.map((enemy, index) => {
+        //
+        //
+        //     // collisions[this.blocks.length + enemy.index] = this.hero.collisionsCheck(enemy.position, 32);
+        //
+        //     /* Enemy block collisions */
+        //     // this.blocks.map(block => {
+        //     //     if (enemy.collisionsCheck(block.position, 50)) {
+        //     //         enemy.setMovementAllow(false);
+        //     //     }
+        //     // });
+        //     //
+        //     /* enemies collissions */
+        //     // this.enemies.forEach((en, key) => {
+        //     //     if ((en.index !== enemy.index) && enemy.collisionsCheck(en.position, 32)) {
+        //     //         en.setMovementAllow(false);
+        //     //         enemy.setMovementAllow(false);
+        //     //     }
+        //     // });
+        //
+        //     // if (enemy.collisionsCheck(this.hero.position, 32)) {
+        //     //     enemy.setMovementAllow(false);
+        //     // }
+        //
+        //     // if (this.heroBullet) {
+        //     //     if (this.heroBullet.collisionsCheck(enemy.position, 32)) {
+        //     //         this.enemies[index]._active = false;
+        //     //         this.heroBullet = null;
+        //     //     }
+        //     // }
+        //
+        //     // if (enemy.movementAllow) {
+        //     enemy.movement(modyfier);
+        //     // } else {
+        //     //     enemy.resetDirection();
+        //     //     enemy.setMovementAllow(true);
+        //     // }
+        //     //
+        //     // enemy.colisionsScreen();
+        //
+        // });
 
         this.blocks.map((block, index) => {
-            collisions[index] = this.hero.collisionsCheck(block.position, 50);
+            this.hero.collisionsCheck(block.position, block.size);
+
             if (this.heroBullet) {
                 if (this.heroBullet.collisionsCheck(block.position, block.size) || this.heroBullet.colisionsScreen()) {
                     this.heroBullet = null;
+                    this.heroReloading = false;
                 }
             }
         });
-
-        if (this.heroBullet) this.heroBullet.movement(modyfier);
-
-        if (this.heroBullet === null) this.heroReloading = false;
-
-        this.hero.movement(this.keysDown, collisions, modyfier);
-
-        this.removeEnemies();
+        if(this.heroBullet) this.heroBullet.movement(modyfier);
+        this.hero.movement(this.keysDown, modyfier);
     }
 
 
