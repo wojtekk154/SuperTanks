@@ -130,6 +130,10 @@ export default class Scene {
         });
         if(this.heroBullet) this.heroBullet.movement(modyfier);
         this.hero.movement(this.keysDown, modyfier);
+
+        document.body.addEventListener('blockcolision', ()=>{
+
+        }, false);
     }
 
 

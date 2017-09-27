@@ -28,21 +28,22 @@ export default class Hero extends Character {
         }
     }
 
-    collisionsCheck(object, size) {
-        if (this.collisionElement(object, size) || this.colisionScreen(900, 900)) {
-            switch (this.position.direction) {
-                case MovementDirection.UP:
-                    this.controls[87] = false;
-                    break;
-                case MovementDirection.DOWN:
-                    this.controls[83] = false;
-                    break;
-                case MovementDirection.LEFT:
-                    this.controls[65] = false;
-                    break;
-                case MovementDirection.RIGHT:
-                    this.controls[68] = false;
-                    break;
+    collisionsCheck(object, size, index) {
+        if (this.collisionElement(object, size)) {
+            let e = new CustomEvent('blockcolision', {
+                hero: this.position
+
+            });
+            document.body.dispatchEvent(e);
+        } else if (this.colisionScreen(900, 900)) {
+            if (this.position.y <= 0) {
+                this.controls[87] = false;
+            } else if (this.position.y >= 900 - 30) {
+                this.controls[83] = false;
+            } else if (this.position.x <= 0) {
+                this.controls[65] = false;
+            } else if (this.position.y >= 900 - 30) {
+                this.controls[68] = false;
             }
         } else {
             this.controls = {87: true, 83: true, 65: true, 68: true};

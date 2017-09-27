@@ -2,19 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6658beb7-9057-4aaa-bcb5-e218a3dd28b6" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SuperTanks12/js/game/souremap.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SuperTanks12/assets/background.png" afterPath="$PROJECT_DIR$/SuperTanks12/assets/background.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SuperTanks12/assets/monster.png" afterPath="$PROJECT_DIR$/SuperTanks12/assets/monster.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SuperTanks12/js/game/bullet.js" afterPath="$PROJECT_DIR$/SuperTanks12/js/game/bullet.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SuperTanks12/js/game/blocks.js" afterPath="$PROJECT_DIR$/SuperTanks12/js/game/blocks.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SuperTanks12/js/game/dataSources.js" afterPath="$PROJECT_DIR$/SuperTanks12/js/game/dataSources.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SuperTanks12/js/game/character.js" afterPath="$PROJECT_DIR$/SuperTanks12/js/game/character.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SuperTanks12/bundle.js" afterPath="$PROJECT_DIR$/SuperTanks12/bundle.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SuperTanks12/js/game/monster.js" afterPath="$PROJECT_DIR$/SuperTanks12/js/game/monster.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SuperTanks12/assets/hero.png" afterPath="$PROJECT_DIR$/SuperTanks12/assets/hero.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SuperTanks12/js/game/scene.js" afterPath="$PROJECT_DIR$/SuperTanks12/js/game/scene.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SuperTanks12/js/game/hero.js" afterPath="$PROJECT_DIR$/SuperTanks12/js/game/hero.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SuperTanks12/js/game/scene.js" afterPath="$PROJECT_DIR$/SuperTanks12/js/game/scene.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -31,11 +22,11 @@
     <splitter split-orientation="horizontal" split-proportion="0.49241465">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="hero.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="hero.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/SuperTanks12/js/game/hero.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="480">
-                  <caret line="30" column="35" lean-forward="false" selection-start-line="30" selection-start-column="35" selection-end-line="30" selection-end-column="35" />
+                <state relative-caret-position="498">
+                  <caret line="33" column="35" lean-forward="false" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="35" />
                   <folding />
                 </state>
               </provider>
@@ -48,16 +39,18 @@
                   <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
+                    <marker date="1506504671008" expanded="true" signature="18385:18634" ph="{...}" />
+                    <marker date="1506504671008" expanded="true" signature="26664:26673" ph="{...}" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="blocks.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="blocks.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/SuperTanks12/js/game/blocks.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="384">
-                  <caret line="24" column="1" lean-forward="true" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
+                  <caret line="24" column="1" lean-forward="false" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
                   <folding />
                 </state>
               </provider>
@@ -110,8 +103,8 @@
           <file leaf-file-name="scene.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/SuperTanks12/js/game/scene.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="288">
-                  <caret line="20" column="25" lean-forward="true" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
+                <state relative-caret-position="479">
+                  <caret line="133" column="53" lean-forward="false" selection-start-line="133" selection-start-column="40" selection-end-line="133" selection-end-column="53" />
                   <folding>
                     <element signature="e#49#88#0" expanded="true" />
                     <element signature="e#2290#2329#0" expanded="false" />
@@ -195,8 +188,8 @@
         <option value="$PROJECT_DIR$/SuperTanks12/js/game/dataSources.js" />
         <option value="$PROJECT_DIR$/SuperTanks12/bundle.js" />
         <option value="$PROJECT_DIR$/SuperTanks12/js/game/bullet.js" />
-        <option value="$PROJECT_DIR$/SuperTanks12/js/game/hero.js" />
         <option value="$PROJECT_DIR$/SuperTanks12/js/game/scene.js" />
+        <option value="$PROJECT_DIR$/SuperTanks12/js/game/hero.js" />
       </list>
     </option>
   </component>
@@ -307,8 +300,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -444,7 +437,11 @@
       <workItem from="1506065800270" duration="1739000" />
       <workItem from="1506322063854" duration="20116000" />
       <workItem from="1506410022537" duration="20091000" />
-      <workItem from="1506441897466" duration="3000" />
+      <workItem from="1506441897466" duration="56000" />
+      <workItem from="1506497489225" duration="7184000" />
+      <workItem from="1506516999782" duration="596000" />
+      <workItem from="1506518312197" duration="594000" />
+      <workItem from="1506525801587" duration="928000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1506337894911</created>
@@ -460,26 +457,33 @@
       <option name="project" value="LOCAL" />
       <updated>1506339501646</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="fixing movement&#10;hero">
+      <created>1506441941202</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1506441941202</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66745000" />
+    <option name="totallyTimeSpent" value="76100000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16649105" sideWeight="0.4362657" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.119072706" sideWeight="0.4362657" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39653304" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1787649" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16649105" sideWeight="0.5637343" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -543,7 +547,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
     <MESSAGE value="remove idea" />
-    <option name="LAST_COMMIT_MESSAGE" value="remove idea" />
+    <MESSAGE value="fixing movement&#10;hero" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixing movement&#10;hero" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -900,25 +905,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JSTank/js/hero.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="22" column="39" lean-forward="false" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SuperTanks12/js/game/souremap.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="256">
           <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SuperTanks12/js/game/dataSources.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2480">
-          <caret line="155" column="20" lean-forward="false" selection-start-line="155" selection-start-column="20" selection-end-line="155" selection-end-column="20" />
           <folding />
         </state>
       </provider>
@@ -937,15 +927,9 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
+            <marker date="1506504671008" expanded="true" signature="18385:18634" ph="{...}" />
+            <marker date="1506504671008" expanded="true" signature="26664:26673" ph="{...}" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SuperTanks12/js/game/character.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="656">
-          <caret line="41" column="1" lean-forward="true" selection-start-line="41" selection-start-column="1" selection-end-line="41" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -957,30 +941,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SuperTanks12/js/game/hero.js">
+    <entry file="file://$PROJECT_DIR$/SuperTanks12/js/game/blocks.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="30" column="35" lean-forward="false" selection-start-line="30" selection-start-column="35" selection-end-line="30" selection-end-column="35" />
+        <state relative-caret-position="384">
+          <caret line="24" column="1" lean-forward="false" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SuperTanks12/js/game/blocks.js">
+    <entry file="file://$PROJECT_DIR$/JSTank/js/hero.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="24" column="1" lean-forward="true" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
+        <state relative-caret-position="527">
+          <caret line="71" column="4" lean-forward="false" selection-start-line="71" selection-start-column="4" selection-end-line="71" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SuperTanks12/js/game/dataSources.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2480">
+          <caret line="155" column="20" lean-forward="false" selection-start-line="155" selection-start-column="20" selection-end-line="155" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SuperTanks12/js/game/character.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="656">
+          <caret line="41" column="1" lean-forward="true" selection-start-line="41" selection-start-column="1" selection-end-line="41" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SuperTanks12/js/game/scene.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="20" column="25" lean-forward="true" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
+        <state relative-caret-position="479">
+          <caret line="133" column="53" lean-forward="false" selection-start-line="133" selection-start-column="40" selection-end-line="133" selection-end-column="53" />
           <folding>
             <element signature="e#49#88#0" expanded="true" />
             <element signature="e#2290#2329#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SuperTanks12/js/game/hero.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="498">
+          <caret line="33" column="35" lean-forward="false" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="35" />
+          <folding />
         </state>
       </provider>
     </entry>
