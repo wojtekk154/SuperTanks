@@ -53,7 +53,7 @@ export default class Bullet {
 
     collisionsCheck(object, size) {
         return !(this.position.x + 5 < object.x || object.x + size < this.position.x ||
-        this.position.y + 5 < object.y || object.y + size < this.position.y);
+            this.position.y + 5 < object.y || object.y + size < this.position.y);
     }
 
     draw() {

@@ -5,13 +5,13 @@
 
 export default class Block {
     constructor(x, y, index, canvas) {
+        this.size = 30;
         this.position = {
-            x: x*30,
-            y: y*30
-        };
+            x: x * this.size,
+            y: y * this.size
+        }
         this.context = canvas.getContext('2d');
         this.index = index;
-        this.size = 30;
         this.indexList = {1: 'first1.png', 2: 'first.png', 3: 'third.png'};
         this.image = new Image();
         this.image.src = 'assets/' + this.indexList[index];

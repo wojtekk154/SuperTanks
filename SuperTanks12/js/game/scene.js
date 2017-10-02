@@ -2,7 +2,7 @@
  * Created by wokustrzyk on 13.09.2017.
  */
 
-import {Map2data} from './dataSources';
+import {Map2data, MovementDirection} from './dataSources';
 import getData from './dataSources';
 import Hero from "./hero";
 import Enemy from "./monster";
@@ -38,15 +38,49 @@ export default class Scene {
             }
         }
 
-        // getData().enemies.map((enemy, index) => {
-        //     this.enemies.push(new Enemy(index, this._canvas, enemy.position, enemy.image));
-        // });
         this.keysDown = {};
+    }
+
+    colisionDirection(player, object, size) {
+        return ((player < object && player + size > object) ||
+        (player < object + size && player + size > object + size) ||
+        (player === object && player + size === object + size));
+
+    }
+
+    colisionSide(palyer, object) {
+        return (palyer > object);
     }
 
     init() {
         this.keyboardInit();
         this.canvasCreate();
+        this._canvas.addEventListener('blockcolision', (e) => {
+            if (MovementDirection.DOWN === e.detail.hero.position.direction &&
+                this.colisionDirection(e.detail.hero.position.x, e.detail.object.position.x, 30) &&
+                this.colisionSide(e.detail.hero.position.y + 30, e.detail.object.position.y)
+            ) {
+                this.hero.position.y = (e.detail.object.position.y - 30) - (e.detail.object.position.y - 30) % 30;
+            } else if (
+                MovementDirection.UP === e.detail.hero.position.direction &&
+                this.colisionDirection(e.detail.hero.position.x, e.detail.object.position.x, 30) &&
+                this.colisionSide(e.detail.object.position.y + 30, e.detail.hero.position.y)
+            ) {
+                this.hero.position.y = (e.detail.object.position.y + 30) + (e.detail.object.position.y + 30) % 30;
+            } else if (
+                MovementDirection.RIGHT === e.detail.hero.position.direction &&
+                this.colisionDirection(e.detail.hero.position.y, e.detail.object.position.y, 30) &&
+                this.colisionSide(e.detail.hero.position.x + 30, e.detail.object.position.x)
+            ) {
+                this.hero.position.x = (e.detail.object.position.x - 30) - (e.detail.object.position.x - 30) % 30;
+            } else if (
+                MovementDirection.LEFT === e.detail.hero.position.direction &&
+                this.colisionDirection(e.detail.hero.position.y, e.detail.object.position.y, 30) &&
+                this.colisionSide(e.detail.object.position.x + 30, e.detail.hero.position.x)
+            ) {
+                this.hero.position.x = (e.detail.object.position.x + 30) + (e.detail.object.position.x + 30) % 30;
+            }
+        }, false);
     }
 
     canvasCreate() {
@@ -70,7 +104,8 @@ export default class Scene {
         }, false);
 
         addEventListener('keyup', (e) => {
-            delete this.keysDown[e.keyCode];
+            if (this.hero.checkPosition(e.keyCode))
+                delete this.keysDown[e.keyCode];
         }, false);
     }
 
@@ -128,12 +163,10 @@ export default class Scene {
                 }
             }
         });
-        if(this.heroBullet) this.heroBullet.movement(modyfier);
+        if (this.heroBullet) this.heroBullet.movement(modyfier);
         this.hero.movement(this.keysDown, modyfier);
 
-        document.body.addEventListener('blockcolision', ()=>{
 
-        }, false);
     }
 
 

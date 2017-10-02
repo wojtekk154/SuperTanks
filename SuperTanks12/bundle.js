@@ -237,7 +237,7 @@ const Map3data = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
 class Character {
     constructor(canvas, position, image) {
         this.position = position;
-        this.size = 30;
+        this.size = 29;
         this.speed = 6 * this.size;
         this.image = new Image();
         this.image.src = image;
@@ -263,6 +263,22 @@ class Character {
         } else {
             return false;
         }
+    }
+
+    checkPosition(keycode) {
+        w;
+        if (keycode === 87 || keycode === 83) {
+            if (this.position.y % 30 < 5) {
+                this.position.y = this.position.y - this.position.y % 30;
+                return true;
+            }
+        } else {
+            if (this.position.x % 30 < 5) {
+                this.position.x = this.position.x - this.position.x % 30;
+                return true;
+            }
+        }
+        return false;
     }
 }
 /* harmony export (immutable) */ __webpack_exports__["a"] = Character;
@@ -331,15 +347,31 @@ class Scene {
             }
         }
 
-        // getData().enemies.map((enemy, index) => {
-        //     this.enemies.push(new Enemy(index, this._canvas, enemy.position, enemy.image));
-        // });
         this.keysDown = {};
+    }
+
+    colisionDirection(player, object, size) {
+        return player < object && player + size > object || player < object + size && player + size > object + size || player === object && player + size === object + size;
+    }
+
+    colisionSide(palyer, object) {
+        return palyer > object;
     }
 
     init() {
         this.keyboardInit();
         this.canvasCreate();
+        this._canvas.addEventListener('blockcolision', e => {
+            if (__WEBPACK_IMPORTED_MODULE_0__dataSources__["b" /* MovementDirection */].DOWN === e.detail.hero.position.direction && this.colisionDirection(e.detail.hero.position.x, e.detail.object.position.x, 30) && this.colisionSide(e.detail.hero.position.y + 30, e.detail.object.position.y)) {
+                this.hero.position.y = e.detail.object.position.y - 30 - (e.detail.object.position.y - 30) % 30;
+            } else if (__WEBPACK_IMPORTED_MODULE_0__dataSources__["b" /* MovementDirection */].UP === e.detail.hero.position.direction && this.colisionDirection(e.detail.hero.position.x, e.detail.object.position.x, 30) && this.colisionSide(e.detail.object.position.y + 30, e.detail.hero.position.y)) {
+                this.hero.position.y = e.detail.object.position.y + 30 + (e.detail.object.position.y + 30) % 30;
+            } else if (__WEBPACK_IMPORTED_MODULE_0__dataSources__["b" /* MovementDirection */].RIGHT === e.detail.hero.position.direction && this.colisionDirection(e.detail.hero.position.y, e.detail.object.position.y, 30) && this.colisionSide(e.detail.hero.position.x + 30, e.detail.object.position.x)) {
+                this.hero.position.x = e.detail.object.position.x - 30 - (e.detail.object.position.x - 30) % 30;
+            } else if (__WEBPACK_IMPORTED_MODULE_0__dataSources__["b" /* MovementDirection */].LEFT === e.detail.hero.position.direction && this.colisionDirection(e.detail.hero.position.y, e.detail.object.position.y, 30) && this.colisionSide(e.detail.object.position.x + 30, e.detail.hero.position.x)) {
+                this.hero.position.x = e.detail.object.position.x + 30 + (e.detail.object.position.x + 30) % 30;
+            }
+        }, false);
     }
 
     canvasCreate() {
@@ -363,7 +395,7 @@ class Scene {
         }, false);
 
         addEventListener('keyup', e => {
-            delete this.keysDown[e.keyCode];
+            if (this.hero.checkPosition(e.keyCode)) delete this.keysDown[e.keyCode];
         }, false);
     }
 
@@ -423,8 +455,6 @@ class Scene {
         });
         if (this.heroBullet) this.heroBullet.movement(modyfier);
         this.hero.movement(this.keysDown, modyfier);
-
-        document.body.addEventListener('blockcolision', () => {}, false);
     }
 
     removeEnemies() {
@@ -482,19 +512,19 @@ class Hero extends __WEBPACK_IMPORTED_MODULE_0__character__["a" /* default */] {
 
     movement(keysDown, modyfier) {
         if (87 in keysDown && this.controls[87]) {
-            this.position.y -= this.speed * modyfier;
+            this.position.y -= 5;
             this.position.direction = 1;
         }
         if (83 in keysDown && this.controls[83]) {
-            this.position.y += this.speed * modyfier;
+            if (this.speed * modyfier) this.position.y += 5;
             this.position.direction = 2;
         }
         if (65 in keysDown && this.controls[65]) {
-            this.position.x -= this.speed * modyfier;
+            this.position.x -= 5;
             this.position.direction = 3;
         }
         if (68 in keysDown && this.controls[68]) {
-            this.position.x += this.speed * modyfier;
+            this.position.x += 5;
             this.position.direction = 4;
         }
     }
@@ -502,10 +532,14 @@ class Hero extends __WEBPACK_IMPORTED_MODULE_0__character__["a" /* default */] {
     collisionsCheck(object, size, index) {
         if (this.collisionElement(object, size)) {
             let e = new CustomEvent('blockcolision', {
-                hero: this.position
-
+                detail: {
+                    hero: { position: this.position, size: this.size },
+                    object: { position: object, size: size }
+                },
+                bubbles: true,
+                cancelable: true
             });
-            document.body.dispatchEvent(e);
+            document.querySelector('canvas').dispatchEvent(e);
         } else if (this.colisionScreen(900, 900)) {
             if (this.position.y <= 0) {
                 this.controls[87] = false;
@@ -513,7 +547,7 @@ class Hero extends __WEBPACK_IMPORTED_MODULE_0__character__["a" /* default */] {
                 this.controls[83] = false;
             } else if (this.position.x <= 0) {
                 this.controls[65] = false;
-            } else if (this.position.y >= 900 - 30) {
+            } else if (this.position.x >= 900 - 30) {
                 this.controls[68] = false;
             }
         } else {
@@ -17905,13 +17939,13 @@ class Bullet {
 
 class Block {
     constructor(x, y, index, canvas) {
+        this.size = 30;
         this.position = {
-            x: x * 30,
-            y: y * 30
+            x: x * this.size,
+            y: y * this.size
         };
         this.context = canvas.getContext('2d');
         this.index = index;
-        this.size = 30;
         this.indexList = { 1: 'first1.png', 2: 'first.png', 3: 'third.png' };
         this.image = new Image();
         this.image.src = 'assets/' + this.indexList[index];

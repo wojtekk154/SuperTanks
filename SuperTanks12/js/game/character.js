@@ -5,7 +5,7 @@
 export default class Character {
     constructor(canvas, position, image) {
         this.position = position;
-        this.size = 30;
+        this.size = 29;
         this.speed = 6 * this.size;
         this.image = new Image();
         this.image.src = image;
@@ -24,9 +24,9 @@ export default class Character {
 
     collisionElement(object, size) {
         return !(this.position.x + this.size < object.x ||
-                 object.x + size < this.position.x ||
-                 this.position.y + this.size < object.y ||
-                 object.y + size < this.position.y);
+        object.x + size < this.position.x ||
+        this.position.y + this.size < object.y ||
+        object.y + size < this.position.y);
     }
 
     colisionScreen(w, h) {
@@ -38,5 +38,21 @@ export default class Character {
         } else {
             return false;
         }
+    }
+
+    checkPosition(keycode) {
+w
+        if (keycode === 87 || keycode === 83) {
+            if (this.position.y % 30 < 5) {
+                this.position.y = this.position.y - (this.position.y % 30);
+                return true
+            }
+        } else {
+            if (this.position.x % 30 < 5) {
+                this.position.x = this.position.x - (this.position.x % 30);
+                return true
+            }
+        }
+        return false;
     }
 }
