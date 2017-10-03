@@ -7,6 +7,7 @@ export default class Hero extends Character {
         this.position = position;
         this.image.src = image;
         this.controls = {87: true, 83: true, 65: true, 68: true};
+        this.keyUp = false;
     }
 
     movement(keysDown, modyfier) {

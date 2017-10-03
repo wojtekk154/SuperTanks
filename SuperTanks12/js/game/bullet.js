@@ -64,7 +64,7 @@ export default class Bullet {
     }
 
     colisionsScreen() {
-        if ((this.position.x >= 800) || (this.position.x <= 0) || (this.position.y >= 600) || (this.position.y < 0)) {
+        if ((this.position.x >= 900) || (this.position.x <= 0) || (this.position.y >= 900) || (this.position.y < 0)) {
             return true;
         }
     }

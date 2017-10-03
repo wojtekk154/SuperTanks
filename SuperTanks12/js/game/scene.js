@@ -104,8 +104,7 @@ export default class Scene {
         }, false);
 
         addEventListener('keyup', (e) => {
-            if (this.hero.checkPosition(e.keyCode))
-                delete this.keysDown[e.keyCode];
+            delete this.keysDown[e.keyCode];
         }, false);
     }
 
@@ -166,7 +165,9 @@ export default class Scene {
         if (this.heroBullet) this.heroBullet.movement(modyfier);
         this.hero.movement(this.keysDown, modyfier);
 
+        this.enemies.forEach(enemy=>{
 
+        });
     }
 
 

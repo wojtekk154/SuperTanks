@@ -395,7 +395,7 @@ class Scene {
         }, false);
 
         addEventListener('keyup', e => {
-            if (this.hero.checkPosition(e.keyCode)) delete this.keysDown[e.keyCode];
+            delete this.keysDown[e.keyCode];
         }, false);
     }
 
@@ -455,6 +455,8 @@ class Scene {
         });
         if (this.heroBullet) this.heroBullet.movement(modyfier);
         this.hero.movement(this.keysDown, modyfier);
+
+        this.enemies.forEach(enemy => {});
     }
 
     removeEnemies() {
@@ -508,6 +510,7 @@ class Hero extends __WEBPACK_IMPORTED_MODULE_0__character__["a" /* default */] {
         this.position = position;
         this.image.src = image;
         this.controls = { 87: true, 83: true, 65: true, 68: true };
+        this.keyUp = false;
     }
 
     movement(keysDown, modyfier) {
@@ -17919,7 +17922,7 @@ class Bullet {
     }
 
     colisionsScreen() {
-        if (this.position.x >= 800 || this.position.x <= 0 || this.position.y >= 600 || this.position.y < 0) {
+        if (this.position.x >= 900 || this.position.x <= 0 || this.position.y >= 900 || this.position.y < 0) {
             return true;
         }
     }
