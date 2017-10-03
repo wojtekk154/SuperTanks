@@ -37,6 +37,7 @@ export default class Scene {
                 }
             }
         }
+        getData().enemies.map((enemy, index) => this.enemies.push(new Enemy(index, this._canvas, enemy.position, enemy.image)));
 
         this.keysDown = {};
     }
@@ -52,34 +53,55 @@ export default class Scene {
         return (palyer > object);
     }
 
+    colisionBlock(player, object){
+        if (MovementDirection.DOWN === player.position.direction &&
+            this.colisionDirection(player.position.x, object.position.x, 30) &&
+            this.colisionSide(object.position.y + 30, object.position.y)
+        ) {
+            return {
+                direction: player.position.direction,
+                x: player.position.x,
+                y: (object.position.y - 30) - (object.position.y - 30) % 30
+            };
+
+        } else if (
+            MovementDirection.UP === player.position.direction &&
+            this.colisionDirection(player.position.x, object.position.x, 30) &&
+            this.colisionSide(object.position.y + 30, player.position.y)
+        ) {
+            return {
+                direction: player.position.direction,
+                x: player.position.x,
+                y: (object.position.y + 30) - (object.position.y + 30) % 30
+            };
+        } else if (
+            MovementDirection.RIGHT === player.position.direction &&
+            this.colisionDirection(player.position.y, object.position.y, 30) &&
+            this.colisionSide(player.position.x + 30, object.position.x)
+        ) {
+            return {
+                direction: player.position.direction,
+                x:(object.position.x - 30) - (object.position.x - 30) % 30,
+                y:  player.position.y
+            };
+        } else if (
+            MovementDirection.LEFT === e.detail.hero.position.direction &&
+            this.colisionDirection(player.position.y, object.position.y, 30) &&
+            this.colisionSide(object.position.x + 30, player.position.x)
+        ) {
+            return {
+                direction: player.position.direction,
+                x:(object.position.x + 30) - (object.position.x + 30) % 30,
+                y:  player.position.y
+            };
+        }
+    }
+
     init() {
         this.keyboardInit();
         this.canvasCreate();
         this._canvas.addEventListener('blockcolision', (e) => {
-            if (MovementDirection.DOWN === e.detail.hero.position.direction &&
-                this.colisionDirection(e.detail.hero.position.x, e.detail.object.position.x, 30) &&
-                this.colisionSide(e.detail.hero.position.y + 30, e.detail.object.position.y)
-            ) {
-                this.hero.position.y = (e.detail.object.position.y - 30) - (e.detail.object.position.y - 30) % 30;
-            } else if (
-                MovementDirection.UP === e.detail.hero.position.direction &&
-                this.colisionDirection(e.detail.hero.position.x, e.detail.object.position.x, 30) &&
-                this.colisionSide(e.detail.object.position.y + 30, e.detail.hero.position.y)
-            ) {
-                this.hero.position.y = (e.detail.object.position.y + 30) + (e.detail.object.position.y + 30) % 30;
-            } else if (
-                MovementDirection.RIGHT === e.detail.hero.position.direction &&
-                this.colisionDirection(e.detail.hero.position.y, e.detail.object.position.y, 30) &&
-                this.colisionSide(e.detail.hero.position.x + 30, e.detail.object.position.x)
-            ) {
-                this.hero.position.x = (e.detail.object.position.x - 30) - (e.detail.object.position.x - 30) % 30;
-            } else if (
-                MovementDirection.LEFT === e.detail.hero.position.direction &&
-                this.colisionDirection(e.detail.hero.position.y, e.detail.object.position.y, 30) &&
-                this.colisionSide(e.detail.object.position.x + 30, e.detail.hero.position.x)
-            ) {
-                this.hero.position.x = (e.detail.object.position.x + 30) + (e.detail.object.position.x + 30) % 30;
-            }
+
         }, false);
     }
 
@@ -110,47 +132,47 @@ export default class Scene {
 
     update(modyfier) {
         this.shootToEnemy();
-        // this.enemies.map((enemy, index) => {
-        //
-        //
-        //     // collisions[this.blocks.length + enemy.index] = this.hero.collisionsCheck(enemy.position, 32);
-        //
-        //     /* Enemy block collisions */
-        //     // this.blocks.map(block => {
-        //     //     if (enemy.collisionsCheck(block.position, 50)) {
-        //     //         enemy.setMovementAllow(false);
-        //     //     }
-        //     // });
-        //     //
-        //     /* enemies collissions */
-        //     // this.enemies.forEach((en, key) => {
-        //     //     if ((en.index !== enemy.index) && enemy.collisionsCheck(en.position, 32)) {
-        //     //         en.setMovementAllow(false);
-        //     //         enemy.setMovementAllow(false);
-        //     //     }
-        //     // });
-        //
-        //     // if (enemy.collisionsCheck(this.hero.position, 32)) {
-        //     //     enemy.setMovementAllow(false);
-        //     // }
-        //
-        //     // if (this.heroBullet) {
-        //     //     if (this.heroBullet.collisionsCheck(enemy.position, 32)) {
-        //     //         this.enemies[index]._active = false;
-        //     //         this.heroBullet = null;
-        //     //     }
-        //     // }
-        //
-        //     // if (enemy.movementAllow) {
-        //     enemy.movement(modyfier);
-        //     // } else {
-        //     //     enemy.resetDirection();
-        //     //     enemy.setMovementAllow(true);
-        //     // }
-        //     //
-        //     // enemy.colisionsScreen();
-        //
-        // });
+        this.enemies.map((enemy, index) => {
+
+
+            // collisions[this.blocks.length + enemy.index] = this.hero.collisionsCheck(enemy.position, 32);
+
+            /* Enemy block collisions */
+            // this.blocks.map(block => {
+            //     if (enemy.collisionsCheck(block.position, 50)) {
+            //         enemy.setMovementAllow(false);
+            //     }
+            // });
+            //
+            /* enemies collissions */
+            // this.enemies.forEach((en, key) => {
+            //     if ((en.index !== enemy.index) && enemy.collisionsCheck(en.position, 32)) {
+            //         en.setMovementAllow(false);
+            //         enemy.setMovementAllow(false);
+            //     }
+            // });
+
+            // if (enemy.collisionsCheck(this.hero.position, 32)) {
+            //     enemy.setMovementAllow(false);
+            // }
+
+            // if (this.heroBullet) {
+            //     if (this.heroBullet.collisionsCheck(enemy.position, 32)) {
+            //         this.enemies[index]._active = false;
+            //         this.heroBullet = null;
+            //     }
+            // }
+
+            // if (enemy.movementAllow) {
+            enemy.movement(modyfier);
+            // } else {
+            //     enemy.resetDirection();
+            //     enemy.setMovementAllow(true);
+            // }
+            //
+            // enemy.colisionsScreen();
+
+        });
 
         this.blocks.map((block, index) => {
             this.hero.collisionsCheck(block.position, block.size);
