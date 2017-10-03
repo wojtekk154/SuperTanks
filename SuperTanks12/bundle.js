@@ -254,7 +254,15 @@ class Character {
     }
 
     collisionElement(object, size) {
-        return !(this.position.x + this.size < object.x || object.x + size < this.position.x || this.position.y + this.size < object.y || object.y + size < this.position.y);
+        try {
+            return !(this.position.x + this.size < object.x || object.x + size < this.position.x || this.position.y + this.size < object.y || object.y + size < this.position.y);
+        } catch (err) {
+            console.log(err);
+        }
+        // return !(this.position.x + this.size < object.x ||
+        // object.x + size < this.position.x ||
+        // this.position.y + this.size < object.y ||
+        // object.y + size < this.position.y);
     }
 
     colisionScreen(w, h) {
@@ -266,7 +274,6 @@ class Character {
     }
 
     checkPosition(keycode) {
-        w;
         if (keycode === 87 || keycode === 83) {
             if (this.position.y % 30 < 5) {
                 this.position.y = this.position.y - this.position.y % 30;
@@ -378,7 +385,7 @@ class Scene {
                 x: object.position.x - 30 - (object.position.x - 30) % 30,
                 y: player.position.y
             };
-        } else if (__WEBPACK_IMPORTED_MODULE_0__dataSources__["b" /* MovementDirection */].LEFT === e.detail.hero.position.direction && this.colisionDirection(player.position.y, object.position.y, 30) && this.colisionSide(object.position.x + 30, player.position.x)) {
+        } else if (__WEBPACK_IMPORTED_MODULE_0__dataSources__["b" /* MovementDirection */].LEFT === player.position.direction && this.colisionDirection(player.position.y, object.position.y, 30) && this.colisionSide(object.position.x + 30, player.position.x)) {
             return {
                 direction: player.position.direction,
                 x: object.position.x + 30 - (object.position.x + 30) % 30,
@@ -390,7 +397,11 @@ class Scene {
     init() {
         this.keyboardInit();
         this.canvasCreate();
-        this._canvas.addEventListener('blockcolision', e => {}, false);
+        this._canvas.addEventListener('blockcolision', e => {
+            console.log(e.detail);
+            console.log(this.colisionBlock(e.detail.hero, e.detail.object));
+            this.hero.position = this.colisionBlock(e.detail.hero, e.detail.object);
+        }, false);
     }
 
     canvasCreate() {
@@ -452,6 +463,7 @@ class Scene {
 
             // if (enemy.movementAllow) {
             enemy.movement(modyfier);
+            enemy.colisionsScreen();
             // } else {
             //     enemy.resetDirection();
             //     enemy.setMovementAllow(true);
@@ -601,6 +613,7 @@ class Enemy extends __WEBPACK_IMPORTED_MODULE_0__character__["a" /* default */] 
         this.framesDirections = 0;
         this._active = true;
         this._movementAllow = true;
+        this.changeDirection = false;
     }
 
     set active(value) {
@@ -611,12 +624,8 @@ class Enemy extends __WEBPACK_IMPORTED_MODULE_0__character__["a" /* default */] 
         return this._active;
     }
 
-    get movementAllow() {
-        return this._movementAllow;
-    }
-
-    setMovementAllow(value) {
-        this._movementAllow = value;
+    setDirectionChange() {
+        this.changeDirection = true;
     }
 
     movement(modyfier) {
@@ -635,6 +644,13 @@ class Enemy extends __WEBPACK_IMPORTED_MODULE_0__character__["a" /* default */] 
                 break;
         }
         this.framesDirections++;
+    }
+
+    colisionsScreen() {
+        if (this.position.x >= 900 - 30) this.position.x = 900 - 30;
+        if (this.position.x <= 0) this.position.x = 0;
+        if (this.position.y >= 900 - 30) this.position.y = 900 - 30;
+        if (this.position.y <= 0) this.position.y = 0;
     }
 
     // invokeDirection() {
@@ -692,9 +708,7 @@ class Enemy extends __WEBPACK_IMPORTED_MODULE_0__character__["a" /* default */] 
     //     return false;
     // }
     //
-    // colisionsScreen() {
-    //     return (this.position.x >= (1000 - 50) || this.position.x <= 0 || this.position.y >= (1000- 50) || this.position.y < 0);
-    // }
+
     //
     // screenDirection() {
     //     if (this.colisionsScreen()) {

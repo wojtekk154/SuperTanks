@@ -14,6 +14,7 @@ export default class Enemy extends Character {
         this.framesDirections = 0;
         this._active = true;
         this._movementAllow = true;
+        this.changeDirection = false;
     }
 
     set active(value) {
@@ -24,12 +25,8 @@ export default class Enemy extends Character {
         return this._active;
     }
 
-    get movementAllow() {
-        return this._movementAllow;
-    }
-
-    setMovementAllow(value) {
-        this._movementAllow = value;
+    setDirectionChange(){
+        this.changeDirection = true;
     }
 
     movement(modyfier) {
@@ -48,6 +45,17 @@ export default class Enemy extends Character {
                 break;
         }
         this.framesDirections++;
+    }
+
+    colisionsScreen() {
+        if (this.position.x >= (900 - 30))
+            this.position.x = 900 - 30;
+        if (this.position.x <= 0)
+            this.position.x = 0;
+        if (this.position.y >= (900 - 30))
+            this.position.y = 900 - 30;
+        if (this.position.y <= 0)
+            this.position.y = 0;
     }
 
     // invokeDirection() {
@@ -105,9 +113,7 @@ export default class Enemy extends Character {
     //     return false;
     // }
     //
-    // colisionsScreen() {
-    //     return (this.position.x >= (1000 - 50) || this.position.x <= 0 || this.position.y >= (1000- 50) || this.position.y < 0);
-    // }
+
     //
     // screenDirection() {
     //     if (this.colisionsScreen()) {

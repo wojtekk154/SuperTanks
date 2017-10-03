@@ -53,7 +53,7 @@ export default class Scene {
         return (palyer > object);
     }
 
-    colisionBlock(player, object){
+    colisionBlock(player, object) {
         if (MovementDirection.DOWN === player.position.direction &&
             this.colisionDirection(player.position.x, object.position.x, 30) &&
             this.colisionSide(object.position.y + 30, object.position.y)
@@ -81,18 +81,18 @@ export default class Scene {
         ) {
             return {
                 direction: player.position.direction,
-                x:(object.position.x - 30) - (object.position.x - 30) % 30,
-                y:  player.position.y
+                x: (object.position.x - 30) - (object.position.x - 30) % 30,
+                y: player.position.y
             };
         } else if (
-            MovementDirection.LEFT === e.detail.hero.position.direction &&
+            MovementDirection.LEFT === player.position.direction &&
             this.colisionDirection(player.position.y, object.position.y, 30) &&
             this.colisionSide(object.position.x + 30, player.position.x)
         ) {
             return {
                 direction: player.position.direction,
-                x:(object.position.x + 30) - (object.position.x + 30) % 30,
-                y:  player.position.y
+                x: (object.position.x + 30) - (object.position.x + 30) % 30,
+                y: player.position.y
             };
         }
     }
@@ -101,7 +101,9 @@ export default class Scene {
         this.keyboardInit();
         this.canvasCreate();
         this._canvas.addEventListener('blockcolision', (e) => {
-
+            console.log(e.detail)
+            console.log(this.colisionBlock(e.detail.hero, e.detail.object));
+            this.hero.position = this.colisionBlock(e.detail.hero, e.detail.object);
         }, false);
     }
 
@@ -165,6 +167,7 @@ export default class Scene {
 
             // if (enemy.movementAllow) {
             enemy.movement(modyfier);
+            enemy.colisionsScreen();
             // } else {
             //     enemy.resetDirection();
             //     enemy.setMovementAllow(true);
@@ -187,7 +190,7 @@ export default class Scene {
         if (this.heroBullet) this.heroBullet.movement(modyfier);
         this.hero.movement(this.keysDown, modyfier);
 
-        this.enemies.forEach(enemy=>{
+        this.enemies.forEach(enemy => {
 
         });
     }

@@ -23,10 +23,18 @@ export default class Character {
     }
 
     collisionElement(object, size) {
-        return !(this.position.x + this.size < object.x ||
-        object.x + size < this.position.x ||
-        this.position.y + this.size < object.y ||
-        object.y + size < this.position.y);
+        try {
+            return !(this.position.x + this.size < object.x ||
+            object.x + size < this.position.x ||
+            this.position.y + this.size < object.y ||
+            object.y + size < this.position.y)
+        }catch (err){
+            console.log(err);
+        }
+        // return !(this.position.x + this.size < object.x ||
+        // object.x + size < this.position.x ||
+        // this.position.y + this.size < object.y ||
+        // object.y + size < this.position.y);
     }
 
     colisionScreen(w, h) {
@@ -41,7 +49,6 @@ export default class Character {
     }
 
     checkPosition(keycode) {
-w
         if (keycode === 87 || keycode === 83) {
             if (this.position.y % 30 < 5) {
                 this.position.y = this.position.y - (this.position.y % 30);
