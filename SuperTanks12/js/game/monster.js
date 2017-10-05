@@ -92,27 +92,27 @@ export default class Enemy extends Character {
     //     }
     // }
     //
-    // collisionsCheck(object, size) {
-    //     if (this.collisionElement(object, size)) {
-    //         switch (this.position.direction) {
-    //             case MovementDirection.UP:
-    //                 this.position.y = object.y + size;
-    //                 break;
-    //             case MovementDirection.DOWN:
-    //                 this.position.y = object.y - 50;
-    //                 break;
-    //             case MovementDirection.LEFT:
-    //                 this.position.x = object.x + size;
-    //                 break;
-    //             case MovementDirection.RIGHT:
-    //                 this.position.x = object.x - 50;
-    //                 break;
-    //         }
-    //         return true;
-    //     }
-    //     return false;
-    // }
-    //
+    collisionsCheck(object, size) {
+        if (this.collisionElement(object, size)) {
+            switch (this.position.direction) {
+                case MovementDirection.UP:
+                    this.position.y = object.y + size;
+                    break;
+                case MovementDirection.DOWN:
+                    this.position.y = object.y - 50;
+                    break;
+                case MovementDirection.LEFT:
+                    this.position.x = object.x + size;
+                    break;
+                case MovementDirection.RIGHT:
+                    this.position.x = object.x - 50;
+                    break;
+            }
+            return true;
+        }
+        return false;
+    }
+
 
     //
     // screenDirection() {

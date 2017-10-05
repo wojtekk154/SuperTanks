@@ -94,15 +94,20 @@ export default class Scene {
                 x: (object.position.x + 30) - (object.position.x + 30) % 30,
                 y: player.position.y
             };
+        } else {
+            return {
+                direction: player.position.direction,
+                x: player.position.x,
+                y: player.position.y
+            };
         }
+
     }
 
     init() {
         this.keyboardInit();
         this.canvasCreate();
         this._canvas.addEventListener('blockcolision', (e) => {
-            console.log(e.detail)
-            console.log(this.colisionBlock(e.detail.hero, e.detail.object));
             this.hero.position = this.colisionBlock(e.detail.hero, e.detail.object);
         }, false);
     }

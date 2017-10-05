@@ -24,9 +24,7 @@ export default class Character {
 
     collisionElement(object, size) {
         try {
-            return !(this.position.x + this.size < object.x ||
-            object.x + size < this.position.x ||
-            this.position.y + this.size < object.y ||
+            return !(this.position.x + this.size < object.x || object.x + size < this.position.x || this.position.y + this.size < object.y ||
             object.y + size < this.position.y)
         }catch (err){
             console.log(err);

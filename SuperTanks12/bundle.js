@@ -391,6 +391,12 @@ class Scene {
                 x: object.position.x + 30 - (object.position.x + 30) % 30,
                 y: player.position.y
             };
+        } else {
+            return {
+                direction: player.position.direction,
+                x: player.position.x,
+                y: player.position.y
+            };
         }
     }
 
@@ -398,8 +404,6 @@ class Scene {
         this.keyboardInit();
         this.canvasCreate();
         this._canvas.addEventListener('blockcolision', e => {
-            console.log(e.detail);
-            console.log(this.colisionBlock(e.detail.hero, e.detail.object));
             this.hero.position = this.colisionBlock(e.detail.hero, e.detail.object);
         }, false);
     }
@@ -687,27 +691,26 @@ class Enemy extends __WEBPACK_IMPORTED_MODULE_0__character__["a" /* default */] 
     //     }
     // }
     //
-    // collisionsCheck(object, size) {
-    //     if (this.collisionElement(object, size)) {
-    //         switch (this.position.direction) {
-    //             case MovementDirection.UP:
-    //                 this.position.y = object.y + size;
-    //                 break;
-    //             case MovementDirection.DOWN:
-    //                 this.position.y = object.y - 50;
-    //                 break;
-    //             case MovementDirection.LEFT:
-    //                 this.position.x = object.x + size;
-    //                 break;
-    //             case MovementDirection.RIGHT:
-    //                 this.position.x = object.x - 50;
-    //                 break;
-    //         }
-    //         return true;
-    //     }
-    //     return false;
-    // }
-    //
+    collisionsCheck(object, size) {
+        if (this.collisionElement(object, size)) {
+            switch (this.position.direction) {
+                case __WEBPACK_IMPORTED_MODULE_1__dataSources__["b" /* MovementDirection */].UP:
+                    this.position.y = object.y + size;
+                    break;
+                case __WEBPACK_IMPORTED_MODULE_1__dataSources__["b" /* MovementDirection */].DOWN:
+                    this.position.y = object.y - 50;
+                    break;
+                case __WEBPACK_IMPORTED_MODULE_1__dataSources__["b" /* MovementDirection */].LEFT:
+                    this.position.x = object.x + size;
+                    break;
+                case __WEBPACK_IMPORTED_MODULE_1__dataSources__["b" /* MovementDirection */].RIGHT:
+                    this.position.x = object.x - 50;
+                    break;
+            }
+            return true;
+        }
+        return false;
+    }
 
     //
     // screenDirection() {
