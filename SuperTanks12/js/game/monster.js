@@ -25,7 +25,7 @@ export default class Enemy extends Character {
         return this._active;
     }
 
-    setDirectionChange(){
+    setDirectionChange() {
         this.changeDirection = true;
     }
 
@@ -91,9 +91,72 @@ export default class Enemy extends Character {
     //             break;
     //     }
     // }
-    //
+
+    colisionDirection(player, object, size) {
+        return ((player < object && player + size > object) ||
+        (player < object + size && player + size > object + size) ||
+        (player === object && player + size === object + size));
+
+    }
+
+    colisionSide(palyer, object) {
+        return (palyer > object);
+    }
+
+    colisionBlock(player, object) {
+        if (
+            MovementDirection.DOWN === player.direction &&
+            this.colisionDirection(player.x, object.position.x, 30) &&
+            this.colisionSide(player.y + 30, object.position.y)
+        ) {
+            return {
+                direction: player.direction,
+                x: player.x,
+                y: (object.position.y - 30) - (object.position.y - 30) % 30
+            };
+        } else if (
+            MovementDirection.UP === player.direction &&
+            this.colisionDirection(player.x, object.position.x, 30) &&
+            this.colisionSide(object.position.y + 30, player.y)
+        ) {
+            return {
+                direction: player.direction,
+                x: player.x,
+                y: (object.position.y + 30) - (object.position.y + 30) % 30
+            };
+        } else if (
+            MovementDirection.RIGHT === player.direction &&
+            this.colisionDirection(player.y, object.position.y, 30) &&
+            this.colisionSide(player.x + 30, object.position.x)
+        ) {
+            return {
+                direction: player.direction,
+                x: (object.position.x - 30) - (object.position.x - 30) % 30,
+                y: player.y
+            };
+        } else if (
+            MovementDirection.LEFT === player.direction &&
+            this.colisionDirection(player.y, object.position.y, 30) &&
+            this.colisionSide(object.position.x + 30, player.x)
+        ) {
+            return {
+                direction: player.direction,
+                x: (object.position.x + 30) - (object.position.x + 30) % 30,
+                y: player.y
+            };
+        } else {
+            return {
+                direction: player.direction,
+                x: player.x,
+                y: player.y
+            };
+        }
+    }
+
     collisionsCheck(object, size) {
         if (this.collisionElement(object, size)) {
+            this.position = this.colisionBlock(this.position, object);
+        } else if (false) {
             switch (this.position.direction) {
                 case MovementDirection.UP:
                     this.position.y = object.y + size;
@@ -113,8 +176,6 @@ export default class Enemy extends Character {
         return false;
     }
 
-
-    //
     // screenDirection() {
     //     if (this.colisionsScreen()) {
     //         switch (this.position.direction) {

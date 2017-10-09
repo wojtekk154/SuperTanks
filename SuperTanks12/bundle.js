@@ -73,49 +73,49 @@ function getData() {
     let data = {
         enemies: [{
             position: {
-                direction: 3,
+                direction: MovementDirection.UP,
                 x: 400,
                 y: 100
             },
             image: 'assets/monster.png'
         }, {
             position: {
-                direction: 2,
+                direction: MovementDirection.UP,
                 x: 500,
                 y: 150
             },
             image: 'assets/monster.png'
         }, {
             position: {
-                direction: 2,
+                direction: MovementDirection.UP,
                 x: 400,
                 y: 200
             },
             image: 'assets/monster.png'
         }, {
             position: {
-                direction: 1,
+                direction: MovementDirection.DOWN,
                 x: 750,
                 y: 100
             },
             image: 'assets/monster.png'
         }, {
             position: {
-                direction: 3,
+                direction: MovementDirection.DOWN,
                 x: 400,
                 y: 500
             },
             image: 'assets/monster.png'
         }, {
             position: {
-                direction: 2,
+                direction: MovementDirection.DOWN,
                 x: 350,
                 y: 250
             },
             image: 'assets/monster.png'
         }, {
             position: {
-                direction: 4,
+                direction: MovementDirection.UP,
                 x: 20,
                 y: 200
             },
@@ -136,58 +136,75 @@ function getData() {
             y: 300
         }, {
             x: 200,
-            y: 600
-        }, {
-            x: 250,
-            y: 0
-        }, {
-            x: 250,
-            y: 0
-        }, {
-            x: 250,
-            y: 400
-        }, {
-            x: 250,
-            y: 400
-        }, {
-            x: 250,
-            y: 400
-        }, {
-            x: 250,
-            y: 100
-        }, {
-            x: 250,
-            y: 200
-        }, {
-            x: 20,
-            y: 200
-        }, {
-            x: 350,
-            y: 200
-        }, {
-            x: 550,
-            y: 200
-        }, {
-            x: 10,
-            y: 400
-        }, {
-            x: 750,
-            y: 400
-        }, {
-            x: 750,
-            y: 100
-        }, {
-            x: 250,
-            y: 500
-        }, {
-            x: 10,
-            y: 10
-        }, {
-            x: 750,
-            y: 550
-        }, {
-            x: 10,
-            y: 500
+            y: 600 //,
+            // {
+            //     x: 250,
+            //     y: 0
+            // },
+            // {
+            //     x: 250,
+            //     y: 0
+            // },
+            // {
+            //     x: 250,
+            //     y: 400
+            // },
+            // {
+            //     x: 250,
+            //     y: 400
+            // },
+            // {
+            //     x: 250,
+            //     y: 400
+            // },
+            // {
+            //     x: 250,
+            //     y: 100
+            // },
+            // {
+            //     x: 250,
+            //     y: 200
+            // },
+            // {
+            //     x: 20,
+            //     y: 200
+            // },
+            // {
+            //     x: 350,
+            //     y: 200
+            // },
+            // {
+            //     x: 550,
+            //     y: 200
+            // },
+            // {
+            //     x: 10,
+            //     y: 400
+            // },
+            // {
+            //     x: 750,
+            //     y: 400
+            // },
+            // {
+            //     x: 750,
+            //     y: 100
+            // },
+            // {
+            //     x: 250,
+            //     y: 500
+            // },
+            // {
+            //     x: 10,
+            //     y: 10
+            // },
+            // {
+            //     x: 750,
+            //     y: 550
+            // },
+            // {
+            //     x: 10,
+            //     y: 500
+            // }
         }],
         hero: {
             position: {
@@ -254,15 +271,7 @@ class Character {
     }
 
     collisionElement(object, size) {
-        try {
-            return !(this.position.x + this.size < object.x || object.x + size < this.position.x || this.position.y + this.size < object.y || object.y + size < this.position.y);
-        } catch (err) {
-            console.log(err);
-        }
-        // return !(this.position.x + this.size < object.x ||
-        // object.x + size < this.position.x ||
-        // this.position.y + this.size < object.y ||
-        // object.y + size < this.position.y);
+        return !(this.position.x + this.size < object.x || object.x + size < this.position.x || this.position.y + this.size < object.y || object.y + size < this.position.y);
     }
 
     colisionScreen(w, h) {
@@ -436,16 +445,11 @@ class Scene {
     update(modyfier) {
         this.shootToEnemy();
         this.enemies.map((enemy, index) => {
-
-            // collisions[this.blocks.length + enemy.index] = this.hero.collisionsCheck(enemy.position, 32);
-
             /* Enemy block collisions */
-            // this.blocks.map(block => {
-            //     if (enemy.collisionsCheck(block.position, 50)) {
-            //         enemy.setMovementAllow(false);
-            //     }
-            // });
-            //
+            this.blocks.map(block => {
+                enemy.collisionsCheck(block, 30);
+            });
+
             /* enemies collissions */
             // this.enemies.forEach((en, key) => {
             //     if ((en.index !== enemy.index) && enemy.collisionsCheck(en.position, 32)) {
@@ -453,6 +457,7 @@ class Scene {
             //         enemy.setMovementAllow(false);
             //     }
             // });
+
 
             // if (enemy.collisionsCheck(this.hero.position, 32)) {
             //     enemy.setMovementAllow(false);
@@ -465,15 +470,8 @@ class Scene {
             //     }
             // }
 
-            // if (enemy.movementAllow) {
             enemy.movement(modyfier);
             enemy.colisionsScreen();
-            // } else {
-            //     enemy.resetDirection();
-            //     enemy.setMovementAllow(true);
-            // }
-            //
-            // enemy.colisionsScreen();
         });
 
         this.blocks.map((block, index) => {
@@ -690,20 +688,64 @@ class Enemy extends __WEBPACK_IMPORTED_MODULE_0__character__["a" /* default */] 
     //             break;
     //     }
     // }
-    //
+
+    colisionDirection(player, object, size) {
+        return player < object && player + size > object || player < object + size && player + size > object + size || player === object && player + size === object + size;
+    }
+
+    colisionSide(palyer, object) {
+        return palyer > object;
+    }
+
+    colisionBlock(player, object) {
+        if (__WEBPACK_IMPORTED_MODULE_1__dataSources__["b" /* MovementDirection */].DOWN === player.direction && this.colisionDirection(player.x, object.position.x, 30) && this.colisionSide(player.y + 30, object.position.y)) {
+            return {
+                direction: player.direction,
+                x: player.x,
+                y: object.position.y - 30 - (object.position.y - 30) % 30
+            };
+        } else if (__WEBPACK_IMPORTED_MODULE_1__dataSources__["b" /* MovementDirection */].UP === player.direction && this.colisionDirection(player.x, object.position.x, 30) && this.colisionSide(object.position.y + 30, player.y)) {
+            return {
+                direction: player.direction,
+                x: player.x,
+                y: object.position.y + 30 - (object.position.y + 30) % 30
+            };
+        } else if (__WEBPACK_IMPORTED_MODULE_1__dataSources__["b" /* MovementDirection */].RIGHT === player.direction && this.colisionDirection(player.y, object.position.y, 30) && this.colisionSide(player.x + 30, object.position.x)) {
+            return {
+                direction: player.direction,
+                x: object.position.x - 30 - (object.position.x - 30) % 30,
+                y: player.y
+            };
+        } else if (__WEBPACK_IMPORTED_MODULE_1__dataSources__["b" /* MovementDirection */].LEFT === player.direction && this.colisionDirection(player.y, object.position.y, 30) && this.colisionSide(object.position.x + 30, player.x)) {
+            return {
+                direction: player.direction,
+                x: object.position.x + 30 - (object.position.x + 30) % 30,
+                y: player.y
+            };
+        } else {
+            return {
+                direction: player.direction,
+                x: player.x,
+                y: player.y
+            };
+        }
+    }
+
     collisionsCheck(object, size) {
         if (this.collisionElement(object, size)) {
+            this.position = this.colisionBlock(this.position, object);
+        } else if (false) {
             switch (this.position.direction) {
-                case __WEBPACK_IMPORTED_MODULE_1__dataSources__["b" /* MovementDirection */].UP:
+                case MovementDirection.UP:
                     this.position.y = object.y + size;
                     break;
-                case __WEBPACK_IMPORTED_MODULE_1__dataSources__["b" /* MovementDirection */].DOWN:
+                case MovementDirection.DOWN:
                     this.position.y = object.y - 50;
                     break;
-                case __WEBPACK_IMPORTED_MODULE_1__dataSources__["b" /* MovementDirection */].LEFT:
+                case MovementDirection.LEFT:
                     this.position.x = object.x + size;
                     break;
-                case __WEBPACK_IMPORTED_MODULE_1__dataSources__["b" /* MovementDirection */].RIGHT:
+                case MovementDirection.RIGHT:
                     this.position.x = object.x - 50;
                     break;
             }
@@ -712,7 +754,6 @@ class Enemy extends __WEBPACK_IMPORTED_MODULE_0__character__["a" /* default */] 
         return false;
     }
 
-    //
     // screenDirection() {
     //     if (this.colisionsScreen()) {
     //         switch (this.position.direction) {

@@ -101,7 +101,6 @@ export default class Scene {
                 y: player.position.y
             };
         }
-
     }
 
     init() {
@@ -140,17 +139,11 @@ export default class Scene {
     update(modyfier) {
         this.shootToEnemy();
         this.enemies.map((enemy, index) => {
-
-
-            // collisions[this.blocks.length + enemy.index] = this.hero.collisionsCheck(enemy.position, 32);
-
             /* Enemy block collisions */
-            // this.blocks.map(block => {
-            //     if (enemy.collisionsCheck(block.position, 50)) {
-            //         enemy.setMovementAllow(false);
-            //     }
-            // });
-            //
+            this.blocks.map(block => {
+                enemy.collisionsCheck(block, 30);
+            });
+
             /* enemies collissions */
             // this.enemies.forEach((en, key) => {
             //     if ((en.index !== enemy.index) && enemy.collisionsCheck(en.position, 32)) {
@@ -158,6 +151,7 @@ export default class Scene {
             //         enemy.setMovementAllow(false);
             //     }
             // });
+
 
             // if (enemy.collisionsCheck(this.hero.position, 32)) {
             //     enemy.setMovementAllow(false);
@@ -170,16 +164,8 @@ export default class Scene {
             //     }
             // }
 
-            // if (enemy.movementAllow) {
             enemy.movement(modyfier);
             enemy.colisionsScreen();
-            // } else {
-            //     enemy.resetDirection();
-            //     enemy.setMovementAllow(true);
-            // }
-            //
-            // enemy.colisionsScreen();
-
         });
 
         this.blocks.map((block, index) => {

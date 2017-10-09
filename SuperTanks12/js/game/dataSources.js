@@ -3,7 +3,7 @@ export default function getData() {
         enemies: [
             {
                 position: {
-                    direction: 3,
+                    direction: MovementDirection.UP,
                     x: 400,
                     y: 100
                 },
@@ -11,7 +11,7 @@ export default function getData() {
             },
             {
                 position: {
-                    direction: 2,
+                    direction: MovementDirection.UP,
                     x: 500,
                     y: 150
                 },
@@ -19,7 +19,7 @@ export default function getData() {
             },
             {
                 position: {
-                    direction: 2,
+                    direction: MovementDirection.UP,
                     x: 400,
                     y: 200,
                 },
@@ -27,7 +27,7 @@ export default function getData() {
             },
             {
                 position: {
-                    direction: 1,
+                    direction: MovementDirection.DOWN,
                     x: 750,
                     y: 100
                 },
@@ -35,7 +35,7 @@ export default function getData() {
             },
             {
                 position: {
-                    direction: 3,
+                    direction: MovementDirection.DOWN,
                     x: 400,
                     y: 500
                 },
@@ -43,7 +43,7 @@ export default function getData() {
             },
             {
                 position: {
-                    direction: 2,
+                    direction: MovementDirection.DOWN,
                     x: 350,
                     y: 250
                 },
@@ -51,7 +51,7 @@ export default function getData() {
             },
             {
                 position: {
-                    direction: 4,
+                    direction: MovementDirection.UP,
                     x: 20,
                     y: 200
                 },
@@ -79,75 +79,75 @@ export default function getData() {
             {
                 x: 200,
                 y: 600
-            },
-            {
-                x: 250,
-                y: 0
-            },
-            {
-                x: 250,
-                y: 0
-            },
-            {
-                x: 250,
-                y: 400
-            },
-            {
-                x: 250,
-                y: 400
-            },
-            {
-                x: 250,
-                y: 400
-            },
-            {
-                x: 250,
-                y: 100
-            },
-            {
-                x: 250,
-                y: 200
-            },
-            {
-                x: 20,
-                y: 200
-            },
-            {
-                x: 350,
-                y: 200
-            },
-            {
-                x: 550,
-                y: 200
-            },
-            {
-                x: 10,
-                y: 400
-            },
-            {
-                x: 750,
-                y: 400
-            },
-            {
-                x: 750,
-                y: 100
-            },
-            {
-                x: 250,
-                y: 500
-            },
-            {
-                x: 10,
-                y: 10
-            },
-            {
-                x: 750,
-                y: 550
-            },
-            {
-                x: 10,
-                y: 500
-            }
+            } //,
+            // {
+            //     x: 250,
+            //     y: 0
+            // },
+            // {
+            //     x: 250,
+            //     y: 0
+            // },
+            // {
+            //     x: 250,
+            //     y: 400
+            // },
+            // {
+            //     x: 250,
+            //     y: 400
+            // },
+            // {
+            //     x: 250,
+            //     y: 400
+            // },
+            // {
+            //     x: 250,
+            //     y: 100
+            // },
+            // {
+            //     x: 250,
+            //     y: 200
+            // },
+            // {
+            //     x: 20,
+            //     y: 200
+            // },
+            // {
+            //     x: 350,
+            //     y: 200
+            // },
+            // {
+            //     x: 550,
+            //     y: 200
+            // },
+            // {
+            //     x: 10,
+            //     y: 400
+            // },
+            // {
+            //     x: 750,
+            //     y: 400
+            // },
+            // {
+            //     x: 750,
+            //     y: 100
+            // },
+            // {
+            //     x: 250,
+            //     y: 500
+            // },
+            // {
+            //     x: 10,
+            //     y: 10
+            // },
+            // {
+            //     x: 750,
+            //     y: 550
+            // },
+            // {
+            //     x: 10,
+            //     y: 500
+            // }
         ],
         hero: {
             position: {
