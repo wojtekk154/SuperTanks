@@ -53,11 +53,12 @@ export default class Scene {
         return (palyer > object);
     }
 
-    colisionBlock(player, object) {
+    colisionBlock(player, object, monster) {
         if (MovementDirection.DOWN === player.position.direction &&
             this.colisionDirection(player.position.x, object.position.x, 30) &&
             this.colisionSide(object.position.y + 30, object.position.y)
         ) {
+
             return {
                 direction: player.position.direction,
                 x: player.position.x,
@@ -141,9 +142,11 @@ export default class Scene {
         this.enemies.map((enemy, index) => {
             /* Enemy block collisions */
             this.blocks.map(block => {
-                enemy.collisionsCheck(block, 30);
-            });
+                if(enemy.collisionElement(block.position, 30)){
+                    enemy.position = this.colisionBlock(enemy, block);
 
+                }
+            });
             /* enemies collissions */
             // this.enemies.forEach((en, key) => {
             //     if ((en.index !== enemy.index) && enemy.collisionsCheck(en.position, 32)) {
@@ -180,10 +183,6 @@ export default class Scene {
         });
         if (this.heroBullet) this.heroBullet.movement(modyfier);
         this.hero.movement(this.keysDown, modyfier);
-
-        this.enemies.forEach(enemy => {
-
-        });
     }
 
 

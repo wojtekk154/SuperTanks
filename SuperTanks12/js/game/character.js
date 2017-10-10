@@ -23,9 +23,8 @@ export default class Character {
     }
 
     collisionElement(object, size) {
-        return !(this.position.x + this.size < object.x || object.x + size < this.position.x || this.position.y + this.size < object.y ||
-            object.y + size < this.position.y);
-        }
+        return !(this.position.x + this.size < object.x || object.x + size < this.position.x || this.position.y + this.size < object.y || object.y + size < this.position.y);
+    }
 
     colisionScreen(w, h) {
         if (this.position.x > w - this.size ||

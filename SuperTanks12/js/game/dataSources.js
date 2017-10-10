@@ -4,39 +4,7 @@ export default function getData() {
             {
                 position: {
                     direction: MovementDirection.UP,
-                    x: 400,
-                    y: 100
-                },
-                image: 'assets/monster.png'
-            },
-            {
-                position: {
-                    direction: MovementDirection.UP,
-                    x: 500,
-                    y: 150
-                },
-                image: 'assets/monster.png'
-            },
-            {
-                position: {
-                    direction: MovementDirection.UP,
-                    x: 400,
-                    y: 200,
-                },
-                image: 'assets/monster.png'
-            },
-            {
-                position: {
-                    direction: MovementDirection.DOWN,
-                    x: 750,
-                    y: 100
-                },
-                image: 'assets/monster.png'
-            },
-            {
-                position: {
-                    direction: MovementDirection.DOWN,
-                    x: 400,
+                    x: 800,
                     y: 500
                 },
                 image: 'assets/monster.png'
@@ -44,19 +12,51 @@ export default function getData() {
             {
                 position: {
                     direction: MovementDirection.DOWN,
-                    x: 350,
-                    y: 250
+                    x: 870,
+                    y: 650
                 },
                 image: 'assets/monster.png'
-            },
-            {
-                position: {
-                    direction: MovementDirection.UP,
-                    x: 20,
-                    y: 200
-                },
-                image: 'assets/monster.png'
-            }
+            }//,
+            // {
+            //     position: {
+            //         direction: MovementDirection.UP,
+            //         x: 870,
+            //         y: 200,
+            //     },
+            //     image: 'assets/monster.png'
+            // },
+            // {
+            //     position: {
+            //         direction: MovementDirection.DOWN,
+            //         x: 870,
+            //         y: 100
+            //     },
+            //     image: 'assets/monster.png'
+            // },
+            // {
+            //     position: {
+            //         direction: MovementDirection.DOWN,
+            //         x: 870,
+            //         y: 500
+            //     },
+            //     image: 'assets/monster.png'
+            // },
+            // {
+            //     position: {
+            //         direction: MovementDirection.DOWN,
+            //         x: 870,
+            //         y: 250
+            //     },
+            //     image: 'assets/monster.png'
+            // },
+            // {
+            //     position: {
+            //         direction: MovementDirection.UP,
+            //         x: 870,
+            //         y: 230
+            //     },
+            //     image: 'assets/monster.png'
+            // }
         ],
 
         blocks: [
